@@ -31,8 +31,8 @@ You will need the following installed:
 
 ### Long Term
 
-- [] Making an install script
-- [] zen mode
+- [ ] Making an install script
+- [ ] zen mode
 
 ## Key Mappings
 
