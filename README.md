@@ -1,4 +1,4 @@
-# Odvim 
+# Odnvim 
 
 ## Motivation
 
