@@ -2,8 +2,7 @@
 
 ## Motivation
 
-My NeoVim setup that is meant to improve some quality of life functionality while still
-retaining the overall sleekness the NeoVim offers. Instead of relying on third party plugins for LSP ([Like Nvim-config](https://github.com/OkelleyDevelopment/Nvim-Config)), 
+Instead of relying on third party plugins for LSP ([Like Nvim-config](https://github.com/OkelleyDevelopment/Nvim-Config)), 
 this refresh aims to harness the power of the built in LSP that NeoVim 0.5+ offers.
 
 This configuration is by no means perfect and will continue to be updated as my work-flow
