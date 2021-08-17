@@ -22,19 +22,17 @@ You will need the following installed:
 - [x] File browsing
 - [x] Documentation update
 - [x] LSP support
-- [] Code formatting
-- [] Documentation update for adding plugins
-- [] autocomplete 
-- [] Documentation update
-- [] Bring in more colorscheme
+- [ ] Documentation on Installation
+- [ ] Code formatting
+- [ ] Documentation update for adding plugins
+- [ ] autocomplete 
+- [ ] Documentation update
+- [ ] Bring in more colorscheme
 
 ### Long Term
 
 - [] Making an install script
 - [] zen mode
-
-
-## Initial Installation 
 
 ## Key Mappings
 
