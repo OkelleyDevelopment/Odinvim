@@ -22,10 +22,10 @@ You will need the following installed:
 - [x] File browsing
 - [x] Documentation update
 - [x] LSP support
+- [x] Autocomplete  (WIP)
 - [ ] Documentation on Installation
 - [ ] Code formatting
 - [ ] Documentation update for adding plugins
-- [ ] autocomplete 
 - [ ] Documentation update
 - [ ] Bring in more colorscheme
 
