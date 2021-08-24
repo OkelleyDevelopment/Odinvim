@@ -50,6 +50,14 @@ return require('packer').startup(function()
     -- LSP and completion
     use { 'kabouzeid/nvim-lspinstall' }
     use { 'neovim/nvim-lspconfig' }
-    use { 'nvim-lua/completion-nvim' }
+    -- ./plugins/compe.lua
+    use {'hrsh7th/nvim-compe',
+            config = function()
+               require('plugins.compe')
+            end,
+
+        } -- Autocompletion plugin
+    --use { 'nvim-lua/completion-nvim' }
+
 
 end)

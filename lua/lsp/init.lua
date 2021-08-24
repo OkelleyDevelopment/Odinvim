@@ -75,7 +75,11 @@ local function setup_servers()
   local servers = require "lspinstall".installed_servers()
   -- ... and add manually installed servers
   table.insert(servers, "clangd")
-  table.insert(servers, "sourcekit")
+  table.insert(servers, "pyright")
+  table.insert(servers, "rust_analyzer")
+  table.insert(servers, "tsserver")
+
+  --table.insert(servers, "sourcekit")
 
   -- Build each servers config
   for _, server in pairs(servers) do
