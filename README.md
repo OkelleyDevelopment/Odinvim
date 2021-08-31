@@ -15,24 +15,28 @@ You will need the following installed:
 - NEOVIM (0.5+)
 - An open mind
 
-## Future updates
-
-### Short Term Goals (Next few weeks):
+## Included Features
 - [x] Git signs (changes, add, or removal)
 - [x] File browsing
 - [x] Documentation update
 - [x] LSP support
+- [x] Autopairs
+
+## Future updates
+
+### Short Term Goals (Next few weeks):
 - [ ] Documentation on Installation
 - [ ] Code formatting
 - [ ] Documentation update for adding plugins
 - [ ] autocomplete 
 - [ ] Documentation update
-- [ ] Bring in more colorscheme
+- [ ] Bring in more colorschemes
 
 ### Long Term
 
-- [ ] Making an install script
 - [ ] zen mode
+- [ ] Making an install script
+
 
 ## Key Mappings
 

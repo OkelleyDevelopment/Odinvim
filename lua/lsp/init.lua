@@ -79,8 +79,6 @@ local function setup_servers()
   table.insert(servers, "rust_analyzer")
   table.insert(servers, "tsserver")
 
-  --table.insert(servers, "sourcekit")
-
   -- Build each servers config
   for _, server in pairs(servers) do
     local config = make_config()

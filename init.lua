@@ -8,7 +8,6 @@
 ----]]
 
 -- Source All the time
--- ./lua/plugins.lua
 require('plugins')
 require("config.settings")
 require("config.keys")

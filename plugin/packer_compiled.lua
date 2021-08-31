@@ -87,6 +87,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/nikolai/.local/share/nvim/site/pack/packer/start/nord.nvim"
   },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/nikolai/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+  },
   ["nvim-compe"] = {
     config = { "\27LJ\2\2-\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\18plugins.compe\frequire\0" },
     loaded = true,

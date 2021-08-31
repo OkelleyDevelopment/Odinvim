@@ -56,8 +56,10 @@ return require('packer').startup(function()
                require('plugins.compe')
             end,
 
-        } -- Autocompletion plugin
-    --use { 'nvim-lua/completion-nvim' }
-
+        }
+      use {
+        'windwp/nvim-autopairs',
+      }
+      require('nvim-autopairs').setup{}
 
 end)
