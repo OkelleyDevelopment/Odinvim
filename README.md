@@ -25,10 +25,10 @@ You will need the following installed:
 ## Future updates
 
 ### Short Term Goals (Next few weeks):
+- [x] Autocomplete  (WIP)
 - [ ] Documentation on Installation
 - [ ] Code formatting
 - [ ] Documentation update for adding plugins
-- [ ] autocomplete 
 - [ ] Documentation update
 - [ ] Bring in more colorschemes
 
