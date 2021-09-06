@@ -10,7 +10,6 @@ vim.g.mapleader = " "  -- Map leader key
 cmd 'syntax enable'
 cmd 'filetype plugin indent on'
 
-set('o', 'wrap', true)
 set('o', 'hidden', true)
 set('o', 'encoding', 'utf-8')
 set('o', 'fileencoding', 'utf-8')
@@ -23,6 +22,7 @@ set('b', 'tabstop', 4)
 set('b', 'shiftwidth', 4)
 set('o', 'smarttab', true)
 set('b', 'expandtab', true)
+set('o', 'smartindent', true)
 set('b', 'smartindent', true)
 set('b', 'autoindent', true)
 set('w', 'number', true)
@@ -39,6 +39,10 @@ set('o', 'smartcase', true)
 set('w', 'wrap', false)
 set('o', 'completeopt', "menuone,noselect")
 
+-- restore cursor position
+cmd(([[
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+]]))
 -------------------------- Status Line ---------------------------
 local statusline = '%#CursorLineNr#'
 statusline = statusline .. ' %y' 

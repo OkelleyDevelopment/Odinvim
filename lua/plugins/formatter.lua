@@ -5,7 +5,7 @@ local filetype_configs = {
       return {
         exe = 'stylua',
         args = {
-          '--config-path ~/dotfiles/stylua/stylua.toml',
+          '--config-path ~/.config/nvim/lua/plugins/stylua.toml',
           '-',
         },
         stdin = true,
@@ -44,7 +44,7 @@ local prettier_config = {
 }
 
 -- add a prettier_config for all js/ts/vue/svelte filetypes
-for _, ft in pairs({ 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'svelte', 'vue' }) do
+for _, ft in pairs({ 'markdown','javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'svelte', 'vue' }) do
   filetype_configs[ft] = prettier_config
 end
 

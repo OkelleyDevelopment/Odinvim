@@ -7,9 +7,14 @@
          \/           \/               \/
 ----]]
 
--- Source All the time
-require('plugins')
-require("config.settings")
-require("config.keys")
-require('config.themes')
-require('lsp')
+-- General Configs
+require 'config'
+-- Plugin Config
+require 'plugins'
+-- Lsp configuration
+require 'lsp'
+
+-- Extras
+require 'plugins.autopairs'
+require 'plugins.nv_lir'
+require 'plugins.cmp'

@@ -1,3 +1,5 @@
 require "lspconfig".rust_analyzer.setup {
-    cmd = {DATA_PATH .. "/lspinstall/rust/rust-analyzer"}
+    cmd = "/home/nikolai/.local/bin/rust-analyzer",
+    settings = {
+    },
 }

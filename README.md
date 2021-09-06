@@ -39,7 +39,6 @@ You will need the following installed:
 
 
 ## Key Mappings
-
 The key mappings are bootstrapped from within the `lua/config/keys.lua`. If you
 wish to remove, simply comment out or delete the line.
 
@@ -51,4 +50,9 @@ utils.map(mode, mapping, command)
 The basic modes include {'n': normal, 'i': insert, 'v': visual}. The `mapping` is the
 keys you will press to get the action, and `command` is the command that would execute once 
 the mapping is made.
+
+
+### Notes for when I update this readme
+1. Formatter 
+    - `pip install yapf`
 
