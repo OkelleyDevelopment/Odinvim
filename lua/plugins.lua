@@ -21,6 +21,8 @@ require('packer').startup(function()
     -- Default Lua functions for other plugins
     use {'nvim-lua/plenary.nvim'}
 
+    use {'glepnir/lspsaga.nvim', requires = 'neovim/nvim-lspconfig'}
+
     -- Autopair braces
     use { 'windwp/nvim-autopairs'}
 

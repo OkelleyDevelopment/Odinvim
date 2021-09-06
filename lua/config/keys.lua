@@ -17,8 +17,3 @@ utils.map('n', '<S-TAB>', ':bnext<CR>')
 -- Better block tabbing
 utils.map('v', '<', '<gv')
 utils.map('v', '>', '>gv')
-
--- Leader + w to write out buffer
-utils.map('n', '<Leader>w', ':write<CR>')
--- Made a change and another
-utils.map('n', '<Leader>q', ':q<CR>')

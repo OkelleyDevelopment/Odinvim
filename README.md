@@ -18,16 +18,16 @@ You will need the following installed:
 ## Included Features
 - [x] Git signs (changes, add, or removal)
 - [x] File browsing
-- [x] Documentation update
-- [x] LSP support
 - [x] Autopairs
+- [x] LSP support
+
 
 ## Future updates
 
 ### Short Term Goals (Next few weeks):
 - [x] Autocomplete  (WIP)
-- [ ] Documentation on Installation
 - [ ] Code formatting
+- [ ] Documentation on Installation
 - [ ] Documentation update for adding plugins
 - [ ] Documentation update
 - [ ] Bring in more colorschemes
@@ -37,6 +37,11 @@ You will need the following installed:
 - [ ] zen mode
 - [ ] Making an install script
 
+
+## File Browsing 
+
+Currently file browsing is handled via `lir.nvim`. To make edits to the setup
+for lir, checkout `./lua/plugins/nv_lir.lua`
 
 ## Key Mappings
 The key mappings are bootstrapped from within the `lua/config/keys.lua`. If you

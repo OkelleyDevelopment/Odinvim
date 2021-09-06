@@ -12,6 +12,7 @@ require 'config'
 -- Plugin Config
 require 'plugins'
 -- Lsp configuration
+-- Add specific lang servers below lsp line ...
 require 'lsp'
 
 -- Extras

@@ -1,4 +1,6 @@
--- LSP Init.lua
+-- #################################################################
+-- Language Server Configs
+-- #################################################################
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
@@ -75,7 +77,7 @@ local function setup_servers()
   local servers = require "lspinstall".installed_servers()
   -- ... and add manually installed servers
   --table.insert(servers, "clangd")
-  table.insert(servers, "pyright")
+  --table.insert(servers, "pyright")
   --table.insert(servers, "rust_analyzer")
   --table.insert(servers, "tsserver")
 
@@ -98,4 +100,3 @@ require "lspinstall".post_install_hook = function()
   setup_servers() -- reload installed servers
   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
-
