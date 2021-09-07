@@ -7,6 +7,7 @@ require'nvim-autopairs'.setup{
       ['['] = ']',
       ['{'] = '}',
       ['`'] = '`',
+      ["'''"] = "'''",
     },
     disable_filetype = { "TelescopePrompt" },
     html_break_line_filetype = {

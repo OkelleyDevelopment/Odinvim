@@ -21,8 +21,6 @@ require('packer').startup(function()
     -- Default Lua functions for other plugins
     use {'nvim-lua/plenary.nvim'}
 
-    use {'glepnir/lspsaga.nvim', requires = 'neovim/nvim-lspconfig'}
-
     -- Autopair braces
     use { 'windwp/nvim-autopairs'}
 
@@ -47,10 +45,12 @@ require('packer').startup(function()
     use { 'kabouzeid/nvim-lspinstall' }
     use {'neovim/nvim-lspconfig'} -- Collection of configurations for built-in LSP clientJkh
     use {'hrsh7th/nvim-cmp', requires = {{"hrsh7th/cmp-buffer"},
-                                         {"hrsh7th/cmp-nvim-lsp"},}}
-    use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+                                         {"hrsh7th/cmp-nvim-lsp"},
+                                         {'hrsh7th/cmp-path'},
+                                     }}
     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
+
     -- Java Debugging (Add note in Readme)
     use 'mfussenegger/nvim-jdtls'
 
