@@ -13,4 +13,9 @@ function utils.map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+function utils.is_root()
+    local output = vim.fn.systemlist "id -u"
+    return ((output[1] or "") == "0")
+end
+
 return utils

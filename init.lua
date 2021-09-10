@@ -11,11 +11,13 @@
 require 'config'
 -- Plugin Config
 require 'plugins'
+require 'plugins.cmp'
 -- Lsp configuration
 -- Add specific lang servers below lsp line ...
-require 'lsp'
+
+require 'lsp.core'
 
 -- Extras
 require 'plugins.autopairs'
 require 'plugins.nv_lir'
-require 'plugins.cmp'
+

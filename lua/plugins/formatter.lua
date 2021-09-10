@@ -23,6 +23,24 @@ local filetype_configs = {
       }
     end,
   },
+    javascript = {
+      -- prettier
+      function()
+        return {
+          exe = "prettier",
+          args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), '--single-quote'},
+          stdin = true
+        }
+      end
+    },
+    markdown = {
+        -- should be prettier
+        function()
+            return {
+                prettier_config
+            }
+        end
+    }
 }
 
 -- configuration options for prettier
@@ -37,6 +55,7 @@ local prettier_config = {
         '--tab-width 2',
         '--trailing-comma all',
         '--jsx-single-quote',
+        '-w'
       },
       stdin = true,
     }
@@ -58,6 +77,6 @@ require('formatter').setup({
 vim.cmd[[
 augroup FormatterNvimWebDev
   autocmd!
-  autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx,*.svelte,*.vue Format
+  autocmd BufWritePost *.md,*.js,*.jsx,*.ts,*.tsx,*.svelte,*.vue Format
 augroup END
 ]]

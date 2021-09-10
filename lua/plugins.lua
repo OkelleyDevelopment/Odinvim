@@ -7,7 +7,6 @@ end
 
 vim.cmd [[packadd packer.nvim]]
 
-
 -- Auto compile when there are changes in plugins.lua
 vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile'
 
@@ -41,16 +40,29 @@ require('packer').startup(function()
             require('gitsigns').setup()
         end}
 
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+    use {'windwp/nvim-ts-autotag'}
+
     -- LSP and completion
     use { 'kabouzeid/nvim-lspinstall' }
     use {'neovim/nvim-lspconfig'} -- Collection of configurations for built-in LSP clientJkh
-    use {'hrsh7th/nvim-cmp', requires = {{"hrsh7th/cmp-buffer"},
-                                         {"hrsh7th/cmp-nvim-lsp"},
-                                         {'hrsh7th/cmp-path'},
-                                     }}
-    use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-    use 'L3MON4D3/LuaSnip' -- Snippets plugin
+    use {'hrsh7th/nvim-cmp', 
+        requires = {
+                {"hrsh7th/cmp-buffer"},
+                {'hrsh7th/cmp-nvim-lua'},
+                {"hrsh7th/cmp-nvim-lsp"},
+                {'saadparwaiz1/cmp_luasnip'},
+                {'hrsh7th/cmp-calc'},
+                {'hrsh7th/cmp-path'},
+                {'L3MON4D3/LuaSnip' },
+            }}
 
+    -- Packer
+    use "rafamadriz/friendly-snippets"
+        
     -- Java Debugging (Add note in Readme)
     use 'mfussenegger/nvim-jdtls'
 
@@ -58,6 +70,8 @@ require('packer').startup(function()
     use "mhartington/formatter.nvim"
 
     ----- Themes -----
+    
+    use 'marko-cerovac/material.nvim'
     use({ 'rose-pine/neovim', as = 'rose-pine'})
     use 'shaunsingh/nord.nvim'
     use 'folke/tokyonight.nvim'
