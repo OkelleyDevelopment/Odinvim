@@ -4,6 +4,8 @@ local actions = require'lir.actions'
 local mark_actions = require 'lir.mark.actions'
 local clipboard_actions = require'lir.clipboard.actions'
 
+local keyOpts = {noremap=true, silent=true}
+
 
 -- Maps the leader + f to open the floating file explorer
 utils.map('n', '<Leader>f', ":lua require'lir.float'.toggle()<CR>", keyOpts)
@@ -56,7 +58,6 @@ require'lir'.setup {
   hide_cursor = false,
 }
 
---[[
 -- custom folder icon
 require'nvim-web-devicons'.setup({
   override = {
@@ -67,7 +68,6 @@ require'nvim-web-devicons'.setup({
     },
   }
 })
---]]
 
 
 vim.cmd [[augroup lir-settings]]

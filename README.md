@@ -12,7 +12,7 @@ evolves.
 
 You will need the following installed:
 
-- NEOVIM (0.5+)
+- NEOVIM (0.5+ -- will not work otherwise)
 - An open mind
 
 ## Included Features
@@ -59,5 +59,44 @@ the mapping is made.
 
 ### Notes for when I update this readme
 1. Formatter 
-    - `pip install yapf`
+    - `pip install black`
+2. `npm install -g vscode-html-languageserver-bin`
+TODO: Add language server section ... this will be a while... 
 
+TODO: Make the functions silent (passing as an opt)
+TODO: Figure out why `lir.nvim` throws an error when renaming a file from the float menu
+
+
+
+## Plugins
+
+- `packer.nvim` - lua plugin manager to auto-install and update plugins
+
+### Git
+
+- `gitsigns` - git gutter indicators and hunk management
+
+### File exploration
+
+- `lir.nvim` - Simple file explorer for easier file navigation around projects
+
+### LSP and Code Completion
+
+- `nvim-cmp` - Autocompletion framework
+
+- `lspconfig` - configuration quickstart for neovim's built in LSP
+
+- `nvim-lspinstall` - automatic installation of LSP servers
+    - `:LspInstall <server name>`
+
+- `lsp_signatures` - show function signature as you type (Might not add)
+
+- ``
+
+### Appearence
+
+- Themes - Themes found around that I felt were neat, more can be added :)
+    - Material Ocean
+    - Tokyonight
+    - Rose-pine
+    - Nord

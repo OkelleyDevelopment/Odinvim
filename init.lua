@@ -8,16 +8,21 @@
 ----]]
 
 -- General Configs
-require 'config'
+require 'core'
+
 -- Plugin Config
 require 'plugins'
 require 'plugins.cmp'
+
+-- File Exploration
+require 'plugins.nv_lir'
+
 -- Lsp configuration
 -- Add specific lang servers below lsp line ...
 
-require 'lsp.core'
+require 'lsp'
+require 'plugins.cmp'
 
 -- Extras
+require 'themes'
 require 'plugins.autopairs'
-require 'plugins.nv_lir'
-

@@ -44,11 +44,14 @@ require('packer').startup(function()
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-    use {'windwp/nvim-ts-autotag'}
+    
+    --use {'windwp/nvim-ts-autotag'}
 
     -- LSP and completion
     use { 'kabouzeid/nvim-lspinstall' }
     use {'neovim/nvim-lspconfig'} -- Collection of configurations for built-in LSP clientJkh
+    use { 'onsails/lspkind-nvim' }
+	use { 'ray-x/lsp_signature.nvim', module='lsp_signature' }
     use {'hrsh7th/nvim-cmp', 
         requires = {
                 {"hrsh7th/cmp-buffer"},
@@ -75,5 +78,6 @@ require('packer').startup(function()
     use({ 'rose-pine/neovim', as = 'rose-pine'})
     use 'shaunsingh/nord.nvim'
     use 'folke/tokyonight.nvim'
+    use 'theniceboy/nvim-deus'
 
 end)

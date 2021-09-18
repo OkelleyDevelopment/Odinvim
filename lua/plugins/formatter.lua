@@ -1,82 +1,59 @@
--- configuration options for stylua
-local filetype_configs = {
-  lua = {
-    function()
-      return {
-        exe = 'stylua',
-        args = {
-          '--config-path ~/.config/nvim/lua/plugins/stylua.toml',
-          '-',
-        },
-        stdin = true,
-      }
-    end,
-  },
-  python = {
-    function()
-      return {
-        exe = 'yapf',
-        args = {
-          '',
-        },
-        stdin = true,
-      }
-    end,
-  },
-    javascript = {
-      -- prettier
-      function()
-        return {
-          exe = "prettier",
-          args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), '--single-quote'},
-          stdin = true
-        }
-      end
-    },
-    markdown = {
-        -- should be prettier
-        function()
-            return {
-                prettier_config
-            }
-        end
-    }
-}
+local M = {}
+local temp = "/tmp"
 
--- configuration options for prettier
-local prettier_config = {
-  function()
+local function remove_whitespace()
     return {
-      exe = 'prettier',
-      args = {
-        '--stdin-filepath',
-        vim.api.nvim_buf_get_name(0),
-        '--single-quote',
-        '--tab-width 2',
-        '--trailing-comma all',
-        '--jsx-single-quote',
-        '-w'
-      },
-      stdin = true,
+        { cmd = { "sed -i 's/[ \t]*$//'"} },
     }
-  end,
-}
-
--- add a prettier_config for all js/ts/vue/svelte filetypes
-for _, ft in pairs({ 'markdown','javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'svelte', 'vue' }) do
-  filetype_configs[ft] = prettier_config
 end
 
--- require formatter.nvim
-require('formatter').setup({
-  logging = false,
-  filetype = filetype_configs,
-})
+local function prettier(params)
+    return {
+        {
+            cmd = {
+                function(file)
+                    local config = vim.loop.os_homedir() .. "/.config/nvim/.prettierrc"
+                    if params ~= nil then
+                        return string.format(
+                            'prettier --config %s --tab-width %s -w "%s" %s',
+                            config, 
+                            vim.bo.shiftwidth,
+                            file,
+                            params
+                        )
+                    end
+                    return string.format('prettier --config %s --tab-width %s -w "%s"', config, vim.bo.shiftwidth, file)
+                end,
+            },
+            tempfile_dir = temp,
+        },
+    }
+end
 
--- call formatter.nvim automatically on save
-vim.cmd[[
-augroup FormatterNvimWebDev
-  autocmd!
-  autocmd BufWritePost *.md,*.js,*.jsx,*.ts,*.tsx,*.svelte,*.vue Format
-augroup END
-]]
+
+local function markdown()
+    return {
+        { cmd = {"prettier -w"}, tempfile_dir = temp },
+        {
+            cmd = 
+        }
+    }
+
+function M.config()
+    vim.g.format_debug = true
+
+    require("format").setup({
+        ["*"] = remove_whitespace(),
+        javascript = prettier(),
+        typescript = prettier(),
+        html = prettier("--print-width 1000"),
+        css = prettier(),
+        sh = shfmt(),
+        lua = stylua(),
+        markdown = markdownfmt(),
+        json = prettier(),
+        python = black(),
+        scss = prettier(),
+        yaml = prettier(),
+    })
+end
