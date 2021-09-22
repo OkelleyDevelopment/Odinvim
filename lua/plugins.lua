@@ -52,6 +52,7 @@ require('packer').startup(function()
     use {'neovim/nvim-lspconfig'} -- Collection of configurations for built-in LSP clientJkh
     use { 'onsails/lspkind-nvim' }
 	use { 'ray-x/lsp_signature.nvim', module='lsp_signature' }
+    use { 'L3MON4D3/LuaSnip' } 
     use {'hrsh7th/nvim-cmp', 
         requires = {
                 {"hrsh7th/cmp-buffer"},
@@ -61,7 +62,10 @@ require('packer').startup(function()
                 {'hrsh7th/cmp-calc'},
                 {'hrsh7th/cmp-path'},
                 {'L3MON4D3/LuaSnip' },
+                {'rafamadriz/friendly-snippets'},
             }}
+    
+    --use { 'saadparwaiz1/cmp_luasnip' }
 
     -- Packer
     use "rafamadriz/friendly-snippets"

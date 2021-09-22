@@ -2,5 +2,5 @@
 --require('rose-pine').set()
 --require('nord').set()
 
--- vim.cmd[[ colorscheme material]]
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[ colorscheme material]]
+--vim.cmd[[colorscheme tokyonight]]

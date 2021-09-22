@@ -41,7 +41,9 @@ for _, lsp in ipairs(servers) do
     end
 end
 
-nvim_lsp.sumneko_lua.setup(lua_settings)
+-- nvim_lsp.sumneko_lua.setup(lua_settings)
+
+-- require'lspconfig'.texlab.setup{}
 
 --[[
 nvim_lsp.rls.setup {
@@ -52,6 +54,6 @@ nvim_lsp.rls.setup {
     capabilities = capabilities
 }
 --]]
---nvim_lsp.tsserver.setup{require 'lsp.tsserver'}
+-- nvim_lsp.tsserver.setup{require 'lsp.tsserver'}
 
 

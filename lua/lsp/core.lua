@@ -10,7 +10,7 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagn
     update_in_insert = false,
 })
 
-vim.cmd [[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics({border="rounded", focusable=false})]]
+-- vim.cmd [[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics({border="rounded", focusable=false})]]
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }

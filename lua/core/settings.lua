@@ -40,9 +40,6 @@ set('w', 'wrap', false)
 set('o', 'completeopt', "menuone,noselect")
 
 -- restore cursor position
-cmd(([[
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-]]))
 -------------------------- Status Line ---------------------------
 local statusline = '%#CursorLineNr#'
 statusline = statusline .. ' %y' 
