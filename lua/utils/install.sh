@@ -73,14 +73,13 @@ cloneConfig() { \
     git clone git@github.com:OkelleyDevelopment/Odinvim.git  ~/.config/nvim/
 }
 
-# Welcome to the Grid
 echo "|---------- Installing Odinvim ----------|" 
 
 # Verify pip3, node, and npm are installed
 which pip3 > /dev/null && echo "Pip3 found." || promptPipInstall
 pip3 list | grep pynvim > /dev/null && echo "Pynvim found." || installpynvim
 which node > /dev/null && echo "NodeJS found." || promptNodeInstall
-which npm > /dev/null && echo "Npm found." || echo "Install NPM"
+which fnm > /dev/null && "fnm found." || which npm > /dev/null && echo "Npm found." || echo "Install NPM"
 
 # move old nvim directory if it exists
 [ -d "$HOME/.config/nvim" ] && moveOldConfig
@@ -93,4 +92,10 @@ cloneConfig
 echo "Check for packer install"
 
 # Closing remark
-echo "This installation has finished"
+echo " "
+echo " "
+echo " "
+echo "Thank you for installing Odinvim"
+echo " "
+echo " "
+echo " "

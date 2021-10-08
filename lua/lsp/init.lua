@@ -31,7 +31,7 @@ for _, lsp in ipairs(servers) do
 
 
     if lsp == 'pyright' then
-        config['cmd'] = {'/usr/local/bin/pyright-langserver', '--stdio'}
+        config['cmd'] = {'~/.npm-global/bin/pyright', '--stdio'}
     end
 
     if lsp == 'lua' then

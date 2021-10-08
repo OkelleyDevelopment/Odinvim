@@ -24,5 +24,5 @@ require 'lsp'
 require 'plugins.cmp'
 
 -- Extras
-require 'themes'
+--require 'themes'
 require 'plugins.autopairs'
