@@ -2,8 +2,8 @@
 -- Lua LSP 
 --]]
 
-require 'lsp.icons'
 require 'lsp.core'
+require 'lsp.icons'
 
 -- Styling of the pop up
 local border = {
@@ -21,7 +21,9 @@ local border = {
 local nvim_lsp = require('lspconfig')
 local lua_settings = require('lsp.lua_ls') 
 
-local servers = {'clangd', 'pyright','rust_analyzer', 'html', 'tsserver'}
+
+local servers = {'clangd', 'pyright','rust_analyzer', 'html', 'tsserver', 'texlab'}
+
 for _, lsp in ipairs(servers) do
     local config = {
         on_attach = on_attach,
@@ -29,13 +31,12 @@ for _, lsp in ipairs(servers) do
         flags = { debounce_text_changes = 150 }
     }
 
-
     if lsp == 'pyright' then
-        config['cmd'] = {'~/.npm-global/bin/pyright', '--stdio'}
+        config['cmd'] = {'pyright-langserver', '--stdio'}
     end
 
     if lsp == 'lua' then
-        nvim_lsp[lsp].setup(lua_settings)
+      nvim_lsp[lsp].setup(lua_settings)
     else
         nvim_lsp[lsp].setup(config)
     end
@@ -44,16 +45,3 @@ end
 -- nvim_lsp.sumneko_lua.setup(lua_settings)
 
 -- require'lspconfig'.texlab.setup{}
-
---[[
-nvim_lsp.rls.setup {
-    settings = {
-        rust = { unstable_features = false, build_on_save = false, all_features = true }
-    },
-    on_attach = on_attach,
-    capabilities = capabilities
-}
---]]
--- nvim_lsp.tsserver.setup{require 'lsp.tsserver'}
-
-

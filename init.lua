@@ -7,22 +7,17 @@
          \/           \/               \/
 ----]]
 
+-- Speed it up
+require 'startup'
+
 -- General Configs
 require 'core'
 
 -- Plugin Config
 require 'plugins'
-require 'plugins.cmp'
 
--- File Exploration
-require 'plugins.nv_lir'
-
--- Lsp configuration
--- Add specific lang servers below lsp line ...
-
+-- Language Server Support
 require 'lsp'
-require 'plugins.cmp'
 
--- Extras
---require 'themes'
-require 'plugins.autopairs'
+-- Make it look nice
+require 'themes'

@@ -1,15 +1,4 @@
--- Auto install packer.nvim if not exists
-local install_path = vim.fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
-
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
-end
-
-vim.cmd [[packadd packer.nvim]]
-
--- Auto compile when there are changes in plugins.lua
-vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile'
-
+-- This makes the linter happy
 local use = require('packer').use
 
 require('packer').startup(function()
@@ -58,17 +47,18 @@ require('packer').startup(function()
                 {"hrsh7th/cmp-buffer"},
                 {'hrsh7th/cmp-nvim-lua'},
                 {"hrsh7th/cmp-nvim-lsp"},
-                {'saadparwaiz1/cmp_luasnip'},
                 {'hrsh7th/cmp-calc'},
                 {'hrsh7th/cmp-path'},
                 {'L3MON4D3/LuaSnip' },
+                { "kdheepak/cmp-latex-symbols" },
                 {'rafamadriz/friendly-snippets'},
             }}
     
-    --use { 'saadparwaiz1/cmp_luasnip' }
+    use { 'saadparwaiz1/cmp_luasnip' }
 
-    -- Packer
     use "rafamadriz/friendly-snippets"
+
+    use({"ckipp01/stylua-nvim"})
         
     -- Java Debugging (Add note in Readme)
     use 'mfussenegger/nvim-jdtls'
@@ -83,5 +73,7 @@ require('packer').startup(function()
     use 'shaunsingh/nord.nvim'
     use 'folke/tokyonight.nvim'
     use 'theniceboy/nvim-deus'
+    use 'logico/typewriter-vim'
+	use('sainnhe/everforest')
 
 end)
