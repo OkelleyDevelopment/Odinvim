@@ -22,12 +22,13 @@ You will need the following installed:
 - [x] Autopairs
 - [x] LSP support
 - [x] A few colorschemes to get started
+- [x] Autocomplete (Just need to setup the servers correctly)
 
 ## Future updates
 
 ### Short Term Goals:
 
-- [x] Autocomplete (WIP)
+
 - [ ] Code formatting (WIP)
 - [ ] Documentation on Installation
 - [ ] Documentation update for adding plugins
