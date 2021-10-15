@@ -29,6 +29,7 @@ require('packer').startup(function()
             require('gitsigns').setup()
         end}
 
+    -- Syntax Highlight
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
@@ -49,31 +50,28 @@ require('packer').startup(function()
                 {"hrsh7th/cmp-nvim-lsp"},
                 {'hrsh7th/cmp-calc'},
                 {'hrsh7th/cmp-path'},
-                {'L3MON4D3/LuaSnip' },
                 { "kdheepak/cmp-latex-symbols" },
                 {'rafamadriz/friendly-snippets'},
             }}
     
     use { 'saadparwaiz1/cmp_luasnip' }
+    
 
-    use "rafamadriz/friendly-snippets"
-
-    use({"ckipp01/stylua-nvim"})
-        
     -- Java Debugging (Add note in Readme)
     use 'mfussenegger/nvim-jdtls'
 
     -- File Formatting (Supposedly)
-    use "mhartington/formatter.nvim"
+    -- use "mhartington/formatter.nvim"
 
     ----- Themes -----
     
-    use 'marko-cerovac/material.nvim'
-    use({ 'rose-pine/neovim', as = 'rose-pine'})
+    -- use 'marko-cerovac/material.nvim'
+    --use({ 'rose-pine/neovim', as = 'rose-pine'})
     use 'shaunsingh/nord.nvim'
-    use 'folke/tokyonight.nvim'
-    use 'theniceboy/nvim-deus'
-    use 'logico/typewriter-vim'
-	use('sainnhe/everforest')
+    -- use 'folke/tokyonight.nvim'
+    -- use 'theniceboy/nvim-deus'
+    -- use 'logico/typewriter-vim'
+	-- use('sainnhe/everforest')
+    -- use 'tiagovla/tokyodark.nvim'
 
 end)

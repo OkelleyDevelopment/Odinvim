@@ -48,5 +48,6 @@ cmp.setup {
     { name = 'path'},
     { name = "latex_symbols" },
     { name = 'buffer'},
+    { name = 'calc' },
   },
 }

@@ -8,7 +8,7 @@
 ----]]
 
 -- Speed it up
-require 'startup'
+require 'speed.startup'
 
 -- General Configs
 require 'core'
@@ -19,5 +19,5 @@ require 'plugins'
 -- Language Server Support
 require 'lsp'
 
--- Make it look nice
-require 'themes'
+-- Load theme and set filetype
+require 'speed.end'

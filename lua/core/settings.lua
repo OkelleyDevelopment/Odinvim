@@ -1,4 +1,5 @@
 local utils = require('utils')
+local status = require('core.statusline')
 local set = utils.opt
 local cmd = vim.cmd
 
@@ -6,9 +7,6 @@ local cmd = vim.cmd
 vim.g.mapleader = " "  -- Map leader key
 
 -------------------------- General Settings ---------------------------
-
-cmd 'syntax enable'
-cmd 'filetype plugin indent on'
 
 set('o', 'hidden', true)
 set('o', 'encoding', 'utf-8')
@@ -25,33 +23,20 @@ set('b', 'expandtab', true)
 set('o', 'smartindent', true)
 set('b', 'smartindent', true)
 set('b', 'autoindent', true)
---set('w', 'number', true)
+-- set('w', 'number', true)
 --set('w', 'relativenumber', true)
 set('o', 'background', 'dark')
 set('o', 'conceallevel', 0)
 set('o', 'showmode', false)
-set('o', 'updatetime', 300)
-set('o', 'timeoutlen', 500)
+set('o', 'updatetime', 100)
+set('o', 'timeoutlen', 300)
 set('o', 'clipboard','unnamed,unnamedplus')
 set('w', 'colorcolumn', '80')
 set('o', 'scrolloff', 4)
 set('o', 'smartcase', true)
 set('w', 'wrap', false)
 set('o', 'completeopt', "menuone,noselect")
-
--- restore cursor position
--------------------------- Status Line ---------------------------
-local statusline = '%#CursorLineNr#'
-statusline = statusline .. ' %y' 
-statusline = statusline .. ' %M' 
-statusline = statusline .. ' %r'
-statusline = statusline .. ' %f' 
-statusline = statusline .. '%='
-statusline = statusline .. '%#CursorLineNr#' 
-statusline = statusline .. ' %l/%L' 
-statusline = statusline .. ' %p%%' 
-statusline = statusline .. ' [%n]'
-set('o', 'statusline', statusline)
+set('o', 'statusline', status)
 
 
 
