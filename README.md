@@ -2,7 +2,7 @@
 
 ## Motivation
 
-Instead of relying on third party plugins for LSP ([Like Nvim-config](https://github.com/OkelleyDevelopment/Nvim-Config)),
+Instead of relying on third party plugins for LSP like the old ([Nvim-config](https://github.com/OkelleyDevelopment/Nvim-Config)),
 this refresh aims to harness the power of the built in LSP that NeoVim 0.5+ offers.
 
 This configuration is by no means perfect and will continue to be updated as my work-flow
@@ -24,25 +24,6 @@ You will need the following installed:
 - [x] A few colorschemes to get started
 - [x] Autocomplete (Just need to setup the servers correctly)
 
-## Future updates
-
-### Short Term Goals:
-
-
-- [ ] Code formatting (WIP)
-- [ ] Documentation on Installation
-- [ ] Documentation update for adding plugins
-
-### Long Term Goals:
-
-- [ ] zen mode
-- [ ] Making an install script
-
-## File Browsing
-
-Currently file browsing is handled via `lir.nvim`. To make edits to the setup
-for lir, checkout `./lua/plugins/nv_lir.lua`
-
 ## Key Mappings
 
 The key mappings are bootstrapped from within the `lua/config/keys.lua`. If you
@@ -58,7 +39,7 @@ The basic modes include {'n': normal, 'i': insert, 'v': visual}. The `mapping` i
 keys you will press to get the action, and `command` is the command that would execute once
 the mapping is made.
 
-## Plugins
+## Plugins (`./lua/plugins/plugs.lua`)
 
 - `packer.nvim` - lua plugin manager to auto-install and update plugins
 
@@ -80,7 +61,7 @@ the mapping is made.
 
   - `:LspInstall <server name>`
 
-- `lsp_signatures` - show function signature as you type (Might not add)
+- `lsp_signatures` - show function signature as you type
 
 ### Appearence
 
@@ -89,3 +70,4 @@ the mapping is made.
   - Tokyonight
   - Rose-pine
   - Nord
+

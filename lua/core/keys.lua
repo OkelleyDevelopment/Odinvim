@@ -17,7 +17,6 @@ utils.map('n', '<C-l>', '<C-w>l')
 utils.map('n', '<Leader>v', ':vsplit<CR>', opts)
 utils.map('n', '<Leader>h', ':split<CR>', opts)
 
-
 -- Capitalize word on letter
 utils.map('i', '<c-u>', '<Esc>viwUi', opts)
 utils.map('n', '<c-u>', '<Esc>viwUi', opts)
