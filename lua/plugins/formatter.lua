@@ -31,14 +31,6 @@ local function prettier(params)
 end
 
 
-local function markdown()
-    return {
-        { cmd = {"prettier -w"}, tempfile_dir = temp },
-        {
-            cmd = 
-        }
-    }
-
 function M.config()
     vim.g.format_debug = true
 
@@ -50,7 +42,7 @@ function M.config()
         css = prettier(),
         sh = shfmt(),
         lua = stylua(),
-        markdown = markdownfmt(),
+        markdown = prettier(),
         json = prettier(),
         python = black(),
         scss = prettier(),

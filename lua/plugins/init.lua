@@ -13,6 +13,7 @@ vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile'
 
 -- ----------------------------------------------------------------------------
 
+
 -- Plugin Configs
 -- ./plugs.lua
 require 'plugins.plugs'
@@ -25,3 +26,5 @@ require 'plugins.nv_lir'
 
 -- Autopair ({"[]"})
 require 'plugins.autopairs'
+
+require 'plugins.formatter'

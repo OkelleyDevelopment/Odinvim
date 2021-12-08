@@ -35,7 +35,7 @@ set('w', 'colorcolumn', '80')
 set('o', 'scrolloff', 4)
 set('o', 'smartcase', true)
 set('w', 'wrap', false)
-set('o', 'completeopt', "menuone,noselect")
+set('o', 'completeopt', "menuone,noinsert,noselect")
 set('o', 'statusline', status)
 
 

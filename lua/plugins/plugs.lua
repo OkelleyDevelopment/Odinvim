@@ -35,7 +35,9 @@ require('packer').startup(function()
         run = ':TSUpdate'
     }
     
-    --use {'windwp/nvim-ts-autotag'}
+    use {'windwp/nvim-ts-autotag'}
+    
+    use {'simrat39/rust-tools.nvim'}
 
     -- LSP and completion
     use { 'kabouzeid/nvim-lspinstall' }
@@ -61,17 +63,16 @@ require('packer').startup(function()
     use 'mfussenegger/nvim-jdtls'
 
     -- File Formatting (Supposedly)
-    -- use "mhartington/formatter.nvim"
+    use {"mhartington/formatter.nvim"}
 
-    ----- Themes -----
-    
-    -- use 'marko-cerovac/material.nvim'
-    --use({ 'rose-pine/neovim', as = 'rose-pine'})
+    ----- Themes ----- 
+    use 'marko-cerovac/material.nvim'
+    use({ 'rose-pine/neovim', as = 'rose-pine'})
     use 'shaunsingh/nord.nvim'
-    -- use 'folke/tokyonight.nvim'
-    -- use 'theniceboy/nvim-deus'
-    -- use 'logico/typewriter-vim'
-	-- use('sainnhe/everforest')
-    -- use 'tiagovla/tokyodark.nvim'
+    use 'folke/tokyonight.nvim'
+    use 'theniceboy/nvim-deus'
+    use 'logico/typewriter-vim'
+	use('sainnhe/everforest')
+    use 'tiagovla/tokyodark.nvim'
 
 end)
