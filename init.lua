@@ -10,9 +10,11 @@
 -- General Configs
 require 'core'
 
+require 'themes'
+
 -- Plugin Config
--- require 'plugins'
+require 'plugins'
 
 -- Language Server Support
--- require 'lsp'
+require 'lsp'
 

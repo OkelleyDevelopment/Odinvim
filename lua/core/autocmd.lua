@@ -5,3 +5,13 @@ vim.api.nvim_exec([[
         autocmd BufWritePre * :%s/\s\+$//e
     augroup END
 ]], false)
+
+vim.api.nvim_exec([[
+    augroup packer_user_config
+      autocmd!
+      autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+    augroup end
+]], false)
+
+
+
