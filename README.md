@@ -22,7 +22,7 @@ You will need the following installed:
 - [x] Autopairs
 - [x] LSP support
 - [x] A few colorschemes to get started
-- [x] Autocomplete (Just need to setup the servers correctly)
+- [ ] Autocomplete (Just need to setup the servers correctly)
 
 ## Key Mappings
 
@@ -70,4 +70,3 @@ the mapping is made.
   - Tokyonight
   - Rose-pine
   - Nord
-

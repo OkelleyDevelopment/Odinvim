@@ -3,7 +3,7 @@ local utils = require('utils')
 
 local opts = { silent = true}
 
--- Who likes the North Western side of the keyboard anyways? 
+-- Who likes the North Western side of the keyboard anyways?
 utils.map('i', 'jk', '<Esc>') -- jk to escape
 utils.map('i', 'kj', '<Esc>') -- kj to escape
 

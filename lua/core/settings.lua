@@ -1,13 +1,14 @@
 local utils = require('utils')
-local status = require('core.statusline')
 local set = utils.opt
 local cmd = vim.cmd
+local statusline = require('core.statusline')
 
 -- Set leader key
 vim.g.mapleader = " "  -- Map leader key
 
 -------------------------- General Settings ---------------------------
 
+-- set('o', 'termguicolors', true)
 set('o', 'hidden', true)
 set('o', 'encoding', 'utf-8')
 set('o', 'fileencoding', 'utf-8')
@@ -23,7 +24,7 @@ set('b', 'expandtab', true)
 set('o', 'smartindent', true)
 set('b', 'smartindent', true)
 set('b', 'autoindent', true)
--- set('w', 'number', true)
+--set('w', 'number', true)
 --set('w', 'relativenumber', true)
 set('o', 'background', 'dark')
 set('o', 'conceallevel', 0)
@@ -31,12 +32,9 @@ set('o', 'showmode', false)
 set('o', 'updatetime', 100)
 set('o', 'timeoutlen', 300)
 set('o', 'clipboard','unnamed,unnamedplus')
-set('w', 'colorcolumn', '80')
+set('w', 'colorcolumn', '90')
 set('o', 'scrolloff', 4)
 set('o', 'smartcase', true)
 set('w', 'wrap', false)
 set('o', 'completeopt', "menuone,noinsert,noselect")
-set('o', 'statusline', status)
-
-
-
+set('o', 'statusline', statusline)

@@ -7,17 +7,12 @@
          \/           \/               \/
 ----]]
 
--- Speed it up
-require 'speed.startup'
-
 -- General Configs
 require 'core'
 
 -- Plugin Config
-require 'plugins'
+-- require 'plugins'
 
 -- Language Server Support
-require 'lsp'
+-- require 'lsp'
 
--- Load theme and set filetype
-require 'speed.end'
