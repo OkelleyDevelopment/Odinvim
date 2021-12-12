@@ -17,4 +17,3 @@ require 'plugins'
 
 -- Language Server Support
 require 'lsp'
-
