@@ -15,7 +15,7 @@ local border = {
 
 -----------  Lsp Init -----------
 local nvim_lsp = require('lspconfig')
-local servers = {'clangd','cssls', 'bashls','python','rust_analyzer', 'html', 'tsserver', 'texlab'}
+local servers = {'clangd','cssls', 'python','rust_analyzer', 'html', 'tsserver'}
 
 for _, lsp in ipairs(servers) do
     local config = {

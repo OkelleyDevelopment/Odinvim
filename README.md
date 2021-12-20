@@ -13,7 +13,16 @@ evolves.
 You will need the following installed:
 
 - NEOVIM (0.5+ -- will not work otherwise)
+  - I currently use the nightly 0.7+
 - An open mind
+
+Also make sure thse are installed:
+
+- clangd
+- `pip install pynvim`
+
+Once I update the script to reflect the changes since August, these
+dependencies will be handled.
 
 ## Included Features
 
@@ -53,20 +62,32 @@ the mapping is made.
 
 ### LSP and Code Completion
 
-- `nvim-cmp` - Autocompletion framework
+#### Snippets
 
+- `L3MON4D3/LuaSnip` - A snippets engine
+- `rafamadriz/friendly-snippets` - A collection of snippets
+- `saadparwaiz1/cmp_luasnip` - snippet completion
+
+#### Language Servers
+
+- `neovim/nvim-lspconfig` -- Collection of configurations for built-in LSP clientJkh
+- `williamboman/nvim-lsp-installer` -- simple to use language server installer
+- `tamago324/nlsp-settings.nvim` -- language server settings defined in json
+- `jose-elias-alvarez/null-ls.nvim` -- formatters and linters
+- `nvim-cmp` - Autocompletion framework
 - `lspconfig` - configuration quickstart for neovim's built in LSP
 
-- `nvim-lspinstall` - automatic installation of LSP servers
+### Formatting (Still a WIP)
 
-  - `:LspInstall <server name>`
+Currently utilizing `prettier` for formatting markdown, json, etc. Some settings
+still need to be worked out and will be addressed soon.
 
-- `lsp_signatures` - show function signature as you type
+- `mhartington/formater.nvim`
 
 ### Appearence
 
 - Themes - Themes found around that I felt were neat, more can be added :)
   - Material Ocean
-  - Tokyonight
+  - Tokyonight (Currently set)
   - Rose-pine
   - Nord

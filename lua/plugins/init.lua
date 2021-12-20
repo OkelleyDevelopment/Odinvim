@@ -80,22 +80,29 @@ require('packer').startup(function()
     -- File Formatting
     use {"mhartington/formatter.nvim"}
 
+
+    --------- Snippets Support (supposedly LOL)---------
+
+    use { 'L3MON4D3/LuaSnip' } -- the snippets engine 
+    use "rafamadriz/friendly-snippets" -- snippets we can use 
+    use "saadparwaiz1/cmp_luasnip" -- snippet completions
+
     --------- Language Server Plugins ---------
 
-    use { 'kabouzeid/nvim-lspinstall' }
     use {'neovim/nvim-lspconfig'} -- Collection of configurations for built-in LSP clientJkh
-    use { 'onsails/lspkind-nvim' }
-	use { 'ray-x/lsp_signature.nvim', module='lsp_signature' }
-    use { 'L3MON4D3/LuaSnip' }
+    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+    use "tamago324/nlsp-settings.nvim" -- language server settings defined in json
+    use "jose-elias-alvarez/null-ls.nvim" -- formatters and linters 
+
     use {'hrsh7th/nvim-cmp',
         requires = {
                 {"hrsh7th/cmp-buffer"},
                 {'hrsh7th/cmp-nvim-lua'},
                 {"hrsh7th/cmp-nvim-lsp"},
-                {'hrsh7th/cmp-calc'},
                 {'hrsh7th/cmp-path'},
+                {'hrsh7th/cmp-calc'},
             }}
 
-    
+
 end)
 
