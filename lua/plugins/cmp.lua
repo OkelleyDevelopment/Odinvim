@@ -8,6 +8,7 @@ if not snip_stat then
     return
 end
 
+-- Found this trick from chris@machines' youtube video
 require('luasnip/loaders/from_vscode').lazy_load()
 
 local check_backspace = function()
@@ -43,6 +44,7 @@ local kind_icons = {
   TypeParameter = "",
 }
 
+-- Redoing this for the 12 millionth time
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -91,6 +93,7 @@ cmp.setup {
       "s",
     }),
   },
+  -- Found this trick from chris@machines' youtube video
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
