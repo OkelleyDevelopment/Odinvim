@@ -1,34 +1,27 @@
-require 'lsp.core'
-require 'lsp.icons'
+--[[
+-- Servers for LSP
+--
+-- Author: Nicholas O'Kelley
+-- Updated: Jan 3, 2021
+--]]
 
--- Styling of the pop up
-local border = {
-    {"╭", "FloatBorder"},
-    {"─", "FloatBorder"},
-    {"╮", "FloatBorder"},
-    {"│", "FloatBorder"},
-    {"╯", "FloatBorder"},
-    {"─", "FloatBorder"},
-    {"╰", "FloatBorder"},
-    {"│", "FloatBorder"}
-}
-
------------  Lsp Init -----------
-local nvim_lsp = require('lspconfig')
-local servers = {'clangd','cssls', 'python','rust_analyzer', 'html', 'tsserver'}
-
-for _, lsp in ipairs(servers) do
-    local config = {
-        on_attach = on_attach,
-        capabilities = capabilities,
-        flags = { debounce_text_changes = 150 }
-    }
-
-    if lsp == 'python' then
-        config['cmd'] = {'pyright-langserver', '--stdio'}
-    else
-        nvim_lsp[lsp].setup(config)
-    end
+local ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+if not ok then
+    return
 end
 
--- nvim_lsp.sumneko_lua.setup(lua_settings)
+-- Register each of the server handlers for installed servers
+-- Check lsp-installer for more info
+lsp_installer.on_server_ready(function(server)
+  local opts = {
+    on_attach = require("lsp.core").on_attach,
+    capabilities = require("lsp.core").capabilities,
+  }
+
+  if server.name == "sumneko_lua" then
+      local lua_opts = require('lsp.configs.sumneko_lua_settings')
+      opts = vim.tbl_deep_extend("force", lua_opts, opts)
+  end
+
+  server:setup(opts)
+end)

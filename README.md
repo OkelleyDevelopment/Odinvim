@@ -1,8 +1,10 @@
 # Odnvim
 
+Author: Nicholas O'Kelley
+
 ## Motivation
 
-Instead of relying on third party plugins for LSP like the old ([Nvim-config](https://github.com/OkelleyDevelopment/Nvim-Config)),
+Instead of relying on third party plugins for LSP like my old ([Nvim-config](https://github.com/OkelleyDevelopment/Nvim-Config)),
 this refresh aims to harness the power of the built in LSP that NeoVim 0.5+ offers.
 
 This configuration is by no means perfect and will continue to be updated as my work-flow
@@ -16,22 +18,30 @@ You will need the following installed:
   - I currently use the nightly 0.7+
 - An open mind
 
-Also make sure thse are installed:
+Also make sure these are installed:
 
-- clangd
+- `clangd`
 - `pip install pynvim`
 
-Once I update the script to reflect the changes since August, these
-dependencies will be handled.
+If you wish to utilize the `live_grep` portion of the Telescope plugin, then you will
+also need to install ripgrep (rg).
+
+I've shift my opinion on how installs will work, for now just manually make sure they
+are installed and things should work smoothly.
 
 ## Included Features
 
 - [x] Git signs (changes, add, or removal)
 - [x] File browsing
-- [x] Autopairs
+- [x] Auto-pairs
+- [x] A few color schemes to get started
 - [x] LSP support
-- [x] A few colorschemes to get started
-- [ ] Autocomplete (Just need to setup the servers correctly)
+  - [x] nvim-lsp-installer helps a ton in this area
+- [x] Autocomplete (Just need to setup the servers correctly to your needs)
+  - [x] friendly-snippets has some good stuff here too
+- [x] Telescope
+- [ ] Format on save (Without errors is preferable LOL)
+- [ ] Zen mode (Might drop this idea)
 
 ## Key Mappings
 
@@ -41,7 +51,7 @@ wish to remove, simply comment out or delete the line.
 If you wish to add a mapping, it is made easy with a utils function in the format:
 
 ```
-utils.map(mode, mapping, command)
+utils.map(mode, mapping, command, opts)
 ```
 
 The basic modes include {'n': normal, 'i': insert, 'v': visual}. The `mapping` is the
@@ -52,30 +62,19 @@ the mapping is made.
 
 - `packer.nvim` - lua plugin manager to auto-install and update plugins
 
+## Tools and Utilities
+
+### File Exploration
+
+- `lir.nvim` - Simple file explorer for easier file navigation around projects
+
 ### Git
 
 - `gitsigns` - git gutter indicators and hunk management
 
-### File exploration
+### Telescope
 
-- `lir.nvim` - Simple file explorer for easier file navigation around projects
-
-### LSP and Code Completion
-
-#### Snippets
-
-- `L3MON4D3/LuaSnip` - A snippets engine
-- `rafamadriz/friendly-snippets` - A collection of snippets
-- `saadparwaiz1/cmp_luasnip` - snippet completion
-
-#### Language Servers
-
-- `neovim/nvim-lspconfig` -- Collection of configurations for built-in LSP clientJkh
-- `williamboman/nvim-lsp-installer` -- simple to use language server installer
-- `tamago324/nlsp-settings.nvim` -- language server settings defined in json
-- `jose-elias-alvarez/null-ls.nvim` -- formatters and linters
-- `nvim-cmp` - Autocompletion framework
-- `lspconfig` - configuration quickstart for neovim's built in LSP
+- `nvim-telescope/telescope.nvim` - Project fuzzy finder
 
 ### Formatting (Still a WIP)
 
@@ -84,7 +83,28 @@ still need to be worked out and will be addressed soon.
 
 - `mhartington/formater.nvim`
 
-### Appearence
+Note: Terminal might show an issue with prettier but the documents do get formatted so
+so it works for me.
+
+## LSP and Code Completion
+
+### Snippet Support
+
+- `L3MON4D3/LuaSnip` - A snippets engine
+- `rafamadriz/friendly-snippets` - A collection of snippets
+- `saadparwaiz1/cmp_luasnip` - snippet completion
+
+### Code Completion
+
+- `hrsh7th/nvim-cmp` - Autocompletion framework
+
+### Language Servers
+
+- `neovim/nvim-lspconfig` -- Collection of configurations for built-in LSP client
+- `williamboman/nvim-lsp-installer` -- simple to use language server installer
+- `tamago324/nlsp-settings.nvim` -- language server settings defined in json
+
+## Appearence
 
 - Themes - Themes found around that I felt were neat, more can be added :)
   - Material Ocean

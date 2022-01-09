@@ -1,3 +1,8 @@
+--[[
+-- Utilities that help with the configuration of the config.
+--
+-- This was influenced by many people so I do not take credit on anything here
+--]]
 local utils = {}
 
 local scopes = { o = vim.o, b = vim.bo, w = vim.wo}

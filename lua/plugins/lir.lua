@@ -1,7 +1,14 @@
+
+local ok, lir = pcall(require, "lir")
+
+if not ok then
+    return
+end
+
 local utils = require('utils')
 
 local actions = require'lir.actions'
-local mark_actions = require 'lir.mark.actions'
+local mark_actions = require'lir.mark.actions'
 local clipboard_actions = require'lir.clipboard.actions'
 
 local keyOpts = {noremap=true, silent=true}
@@ -10,7 +17,7 @@ local keyOpts = {noremap=true, silent=true}
 -- Maps the leader + f to open the floating file explorer
 utils.map('n', '<Leader>f', ":lua require'lir.float'.toggle()<CR>", keyOpts)
 
-require'lir'.setup {
+lir.setup {
   show_hidden_files = true,
   devicons_enable = true,
   mappings = {
@@ -62,7 +69,7 @@ require'lir'.setup {
 require'nvim-web-devicons'.setup({
   override = {
     lir_folder_icon = {
-      icon = "",
+      icon = "[]",
       color = "#7ebae4",
       name = "LirFolderNode"
     },

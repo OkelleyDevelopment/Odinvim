@@ -8,14 +8,19 @@ if not snip_stat then
     return
 end
 
--- Found this trick from chris@machines' youtube video
+---------------------------------------------------------------------
+-- Found this trick from Chris@Machine
 require('luasnip/loaders/from_vscode').lazy_load()
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
+---------------------------------------------------------------------
 
+-- Feel free to add in icons
+-- using nerd font or something, I do not like using them
+-- though :)
 local kind_icons = {
   Text = "",
   Method = "",

@@ -1,21 +1,40 @@
--- ----------------------------------------------------------------------------
--- Auto install packer.nvim if not exists
+------------------- Automatically Install Packer.nvim -------------------------
 local install_path = vim.fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
+    PACKER = vim.fn.system {"git", "clone",
+                            "--depth", "1",
+                            "https://github.com/wbthomason/packer.nvim", install_path}
+    print "Packer was installed. Close and reopen Neovim"
+
 end
 
 vim.cmd [[packadd packer.nvim]]
 
--- Auto compile when there are changes in plugins.lua
-vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile'
 
--- ----------------------------------------------------------------------------
+-- Auto compile when there are changes in plugins.lua
+vim.cmd 'autocmd BufWritePost init.lua PackerCompile'
+
+------------------------------------------------------------------------------
+
+local ok, packer = pcall(require, "packer")
+if not ok then
+    print "Packer missing"
+    return
+end
+
+packer.init {
+  display = {
+    open_fn = function()
+      return require("packer.util").float { border = "rounded" }
+    end,
+  },
+}
 
 
 ------------------- Require Plugins -------------------------
--- Completion 
+--
+-- Completion
 require 'plugins.cmp'
 --
 -- File Exploration
@@ -26,16 +45,16 @@ require 'plugins.autopairs'
 --
 -- Code Formatting (Currently supports python and markdown)
 require 'plugins.formatter'
+--
+-- Telescope
+require 'plugins.telescope'
 
 ------------------- End Require Plugins -------------------------
-
-
+--
 ------------------- Packer Configs --------------------
 
 -- This makes the linter not scream at me
-local use = require('packer').use
-
-require('packer').startup(function()
+return packer.startup(function(use)
 
     -- Packer to maintain itself
     use {'wbthomason/packer.nvim', opt = true}
@@ -54,10 +73,8 @@ require('packer').startup(function()
 
     -- Default Lua functions for other plugins 
     use {'nvim-lua/plenary.nvim'}
-
     -- Autopair braces
     use { 'windwp/nvim-autopairs'}
-
     -- Git integration
     use { 'lewis6991/gitsigns.nvim',
           requires = {
@@ -66,34 +83,31 @@ require('packer').startup(function()
           config = function()
             require('gitsigns').setup()
         end}
-
     -- File browser
     use {"kyazdani42/nvim-web-devicons"}
     use {'tamago324/lir.nvim',
             requires = {
-               {'kyazdani42/nvim-web-devicons'},
                {'tamago324/lir-git-status.nvim'},
             },
         }
+    use {
+      'nvim-telescope/telescope.nvim',
+      requires = { {'nvim-lua/plenary.nvim'} }
+    }
 
-    
-    -- File Formatting
+    -- File Formatting (Might be removed for null-ls)
     use {"mhartington/formatter.nvim"}
 
 
-    --------- Snippets Support (supposedly LOL)---------
+    --------- Snippets Support ---------
 
     use { 'L3MON4D3/LuaSnip' } -- the snippets engine 
     use "rafamadriz/friendly-snippets" -- snippets we can use 
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
 
-    --------- Language Server Plugins ---------
+    --------- Code Completion ---------
 
-    use {'neovim/nvim-lspconfig'} -- Collection of configurations for built-in LSP clientJkh
-    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-    use "tamago324/nlsp-settings.nvim" -- language server settings defined in json
     use "jose-elias-alvarez/null-ls.nvim" -- formatters and linters 
-
     use {'hrsh7th/nvim-cmp',
         requires = {
                 {"hrsh7th/cmp-buffer"},
@@ -104,5 +118,15 @@ require('packer').startup(function()
             }}
 
 
+    --------- Language Server Plugins ---------
+
+    use {'neovim/nvim-lspconfig'} -- Collection of configurations for built-in LSP clientJkh
+    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+    use "tamago324/nlsp-settings.nvim" -- language server settings defined in json
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if PACKER then
+    require("packer").sync()
+  end
 end)
 
