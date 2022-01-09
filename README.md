@@ -1,4 +1,4 @@
-# Odnvim
+# Odinvim
 
 Author: Nicholas O'Kelley
 
@@ -9,25 +9,6 @@ this refresh aims to harness the power of the built in LSP that NeoVim 0.5+ offe
 
 This configuration is by no means perfect and will continue to be updated as my work-flow
 evolves.
-
-## Prerequisites
-
-You will need the following installed:
-
-- NEOVIM (0.5+ -- will not work otherwise)
-  - I currently use the nightly 0.7+
-- An open mind
-
-Also make sure these are installed:
-
-- `clangd`
-- `pip install pynvim`
-
-If you wish to utilize the `live_grep` portion of the Telescope plugin, then you will
-also need to install ripgrep (rg).
-
-I've shift my opinion on how installs will work, for now just manually make sure they
-are installed and things should work smoothly.
 
 ## Included Features
 
@@ -42,6 +23,31 @@ are installed and things should work smoothly.
 - [x] Telescope
 - [ ] Format on save (Without errors is preferable LOL)
 - [ ] Zen mode (Might drop this idea)
+
+## Prerequisites
+
+You will need the following installed:
+
+- NEOVIM (0.5+ -- will not work otherwise)
+- `clangd`
+- `pip install pynvim`
+- `npm i -g neovim`
+  - Make sure you configure Node to be user level (no sudo + node)
+- `ripgrep (rg)`
+  - If you wish to utilize the `live_grep` (`<leader>g`) portion of the Telescope plugin
+
+I've shift my opinion on how installs will work, for now just manually make sure they
+are installed and things should work smoothly.
+
+## Setup
+
+### Manual
+
+**IMPORTANT**: Config is built on Neovim v0.7.0+, but should work on [v0.6.0](https://github.com/neovim/neovim/releases/tag/v0.6.0)
+
+```
+git clone https://github.com/OkelleyDevelopment/Odinvim.git ~/.config/nvim
+```
 
 ## Key Mappings
 
@@ -104,7 +110,7 @@ so it works for me.
 - `williamboman/nvim-lsp-installer` -- simple to use language server installer
 - `tamago324/nlsp-settings.nvim` -- language server settings defined in json
 
-## Appearence
+## Appearance
 
 - Themes - Themes found around that I felt were neat, more can be added :)
   - Material Ocean
