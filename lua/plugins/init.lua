@@ -2,6 +2,7 @@
 local install_path = vim.fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+    -- Allows us to bootstrap
     PACKER = vim.fn.system {"git", "clone",
                             "--depth", "1",
                             "https://github.com/wbthomason/packer.nvim", install_path}
@@ -23,6 +24,9 @@ if not ok then
     return
 end
 
+-- Discussions with others has led me to this approach, Chris was 
+-- the latest, but I had in some notes where Vhyrro was mentioning 
+-- how to handle loading.
 packer.init {
   display = {
     open_fn = function()
@@ -124,6 +128,7 @@ return packer.startup(function(use)
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
     use "tamago324/nlsp-settings.nvim" -- language server settings defined in json
 
+    -- This is what will finish out the bootstrap
   if PACKER then
     require("packer").sync()
   end
