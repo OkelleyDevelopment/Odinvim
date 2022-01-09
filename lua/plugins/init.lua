@@ -123,8 +123,7 @@ return packer.startup(function(use)
     use {'neovim/nvim-lspconfig'} -- Collection of configurations for built-in LSP clientJkh
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
     use "tamago324/nlsp-settings.nvim" -- language server settings defined in json
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
+
   if PACKER then
     require("packer").sync()
   end
