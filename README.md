@@ -21,7 +21,11 @@ evolves.
 - [x] Autocomplete (Just need to setup the servers correctly to your needs)
   - [x] friendly-snippets has some good stuff here too
 - [x] Telescope
-- [ ] Format on save (Without errors is preferable LOL)
+- [x] Format on save utilizing `null-ls`
+  - Install the following for my setup:
+    - `cargo install stylua` (lua formatter)
+    - `pip install black` (python formatter)
+    - `npm install -g prettier` (Assumes your npm setup is for user level perms only)
 - [ ] Zen mode (Might drop this idea)
 
 ## Prerequisites

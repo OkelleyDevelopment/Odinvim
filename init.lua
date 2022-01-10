@@ -11,13 +11,13 @@ Author: Nicholas O'Kelley
 ----]]
 
 -- General Configs
-require 'core'
-
--- Config Themes
-require 'themes'
+require "core"
 
 -- Plugin Config
-require 'plugins'
+require "plugins"
 
 -- Language Server Support
-require 'lsp'
+require "lsp"
+
+-- Config Themes
+require "themes"

@@ -8,10 +8,10 @@
 --]]
 
 local signs = {
-    { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn", text = "" },
-    { name = "DiagnosticSignHint", text = "" },
-    { name = "DiagnosticSignInfo", text = "" },
+    { name = "DiagnosticSignError", text = "E" },
+    { name = "DiagnosticSignWarn", text = "W" },
+    { name = "DiagnosticSignHint", text = "H" },
+    { name = "DiagnosticSignInfo", text = "I" },
 }
 
 for _, sign in ipairs(signs) do
