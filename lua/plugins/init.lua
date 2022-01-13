@@ -66,6 +66,9 @@ require "plugins.telescope"
 --
 -- Null ls
 require "plugins.null_ls"
+--
+-- Zen Mode
+require "plugins.zen"
 
 ------------------- End Require Plugins -------------------------
 --
@@ -147,6 +150,9 @@ return packer.startup(function(use)
 
     -- Java
     use "mfussenegger/nvim-jdtls"
+
+    -- Zen Mode
+    use { "folke/zen-mode.nvim" }
 
     -- This is what will finish out the bootstrap
     if PACKER then
