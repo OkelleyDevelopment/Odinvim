@@ -26,7 +26,10 @@ evolves.
 - [x] Format on save utilizing `null-ls`
 - [x] Zen mode
 
-## Prerequisites
+
+## Setup
+
+### Prerequisites
 
 - NEOVIM (v0.5.0+)
 - Install the following for my setup:
@@ -43,8 +46,6 @@ evolves.
 I've shift my opinion on how installs will work, for now just manually make sure they
 are installed and things should work smoothly.
 
-## Setup
-
 ### Manual
 
 **IMPORTANT**: Keep in mind this config is built on Neovim v0.7.0+
@@ -53,7 +54,9 @@ are installed and things should work smoothly.
 git clone https://github.com/OkelleyDevelopment/Odinvim.git ~/.config/nvim
 ```
 
-## Key Mappings
+## Feature Breakdown
+
+### Key Mappings
 
 The key mappings are bootstrapped from within the `lua/config/keys.lua`. If you
 wish to remove, simply comment out or delete the line.
@@ -68,36 +71,36 @@ The basic modes include {'n': normal, 'i': insert, 'v': visual}. The `mapping` i
 keys you will press to get the action, and `command` is the command that would execute once
 the mapping is made.
 
-## Plugins (`./lua/plugins/plugs.lua`)
+### Plugins (`./lua/plugins/plugs.lua`)
 
 - `packer.nvim` - lua plugin manager to auto-install and update plugins
 
-## Tools and Utilities
+### Tools and Utilities
 
 - `lir.nvim` - Simple file explorer for easier file navigation around projects
 - `gitsigns` - git gutter indicators and hunk management
 - `nvim-telescope/telescope.nvim` - Project fuzzy finder
 - `folke/zen-mode.nvim` - Distraction free mode (Minor Adjustments to be made)
 
-## LSP and Code Completion
+### LSP and Code Completion
 
-### Snippet Support
+#### Snippet Support
 
 - `L3MON4D3/LuaSnip` - A snippets engine
 - `rafamadriz/friendly-snippets` - A collection of snippets
 - `saadparwaiz1/cmp_luasnip` - snippet completion
 
-### Code Completion
+#### Code Completion
 
 - `hrsh7th/nvim-cmp` - Autocompletion framework
 
-### Language Servers
+#### Language Servers
 
 - `neovim/nvim-lspconfig` -- Collection of configurations for built-in LSP client
 - `williamboman/nvim-lsp-installer` -- simple to use language server installer
 - `tamago324/nlsp-settings.nvim` -- language server settings defined in JSON
 
-## Appearance
+### Appearance
 
 - Themes - Themes found around that I felt were neat, more can be added :)
   - Onenord (Currently Set)
