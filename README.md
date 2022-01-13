@@ -2,7 +2,7 @@
 
 Author: Nicholas O'Kelley
 
-<img src="./assets/Default.png" width="200" height="200" />
+<img src="./assets/Default.png" width="800" height="600" />
 
 ## Motivation
 
