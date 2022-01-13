@@ -2,7 +2,7 @@
 
 Author: Nicholas O'Kelley
 
-![Odinvim](./assets/Default.png)
+<img src="./assets/Default.png" width="200" height="200" />
 
 ## Motivation
 
