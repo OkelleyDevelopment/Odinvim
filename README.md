@@ -26,7 +26,7 @@ evolves.
     - `cargo install stylua` (lua formatter)
     - `pip install black` (python formatter)
     - `npm install -g prettier` (Assumes your npm setup is for user level perms only)
-- [ ] Zen mode (Might drop this idea)
+- [x] Zen mode
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ are installed and things should work smoothly.
 
 ### Manual
 
-**IMPORTANT**: Config is built on Neovim v0.7.0+, but should work on [v0.6.0](https://github.com/neovim/neovim/releases/tag/v0.6.0)
+**IMPORTANT**: Config is built on Neovim v0.7.0+, but should work on [v0.6.0](https://github.com/neovim/neovim/releases/tag/v0.6.0) and _should_ work on v0.5.0
 
 ```
 git clone https://github.com/OkelleyDevelopment/Odinvim.git ~/.config/nvim
@@ -86,15 +86,11 @@ the mapping is made.
 
 - `nvim-telescope/telescope.nvim` - Project fuzzy finder
 
-### Formatting (Still a WIP)
+### Zen Mode
 
-Currently utilizing `prettier` for formatting markdown, json, etc. Some settings
-still need to be worked out and will be addressed soon.
+- `folke/zen-mode.nvim` - Distraction free mode
 
-- `mhartington/formater.nvim`
-
-Note: Terminal might show an issue with prettier but the documents do get formatted so
-so it works for me.
+Note: Still adjusting some settings, but full screen terminal and it works!
 
 ## LSP and Code Completion
 
@@ -112,12 +108,13 @@ so it works for me.
 
 - `neovim/nvim-lspconfig` -- Collection of configurations for built-in LSP client
 - `williamboman/nvim-lsp-installer` -- simple to use language server installer
-- `tamago324/nlsp-settings.nvim` -- language server settings defined in json
+- `tamago324/nlsp-settings.nvim` -- language server settings defined in JSON
 
 ## Appearance
 
 - Themes - Themes found around that I felt were neat, more can be added :)
+  - Onenord (Currently Set)
   - Material Ocean
-  - Tokyonight (Currently set)
+  - Tokyonight
   - Rose-pine
   - Nord
