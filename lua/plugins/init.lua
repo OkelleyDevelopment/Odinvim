@@ -83,7 +83,8 @@ return packer.startup(function(use)
     -- use 'marko-cerovac/material.nvim'
     -- use({ 'rose-pine/neovim', as = 'rose-pine'})
     -- use 'shaunsingh/nord.nvim'
-    use "folke/tokyonight.nvim"
+    --use "folke/tokyonight.nvim"
+    use "rmehri01/onenord.nvim"
     -- use 'theniceboy/nvim-deus'
     -- use 'logico/typewriter-vim'
     -- use('sainnhe/everforest')

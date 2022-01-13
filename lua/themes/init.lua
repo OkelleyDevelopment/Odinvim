@@ -11,6 +11,7 @@
 -- You can have all the themes uncommented in the plugins but I don't want to have so
 -- much installed as I am trying to maintain a slim but functional configuration.
 -- ]]
+------------------------------------------------------------------------------------------
 
 -- require('rose-pine').set()
 -- require('nord').set()
@@ -22,13 +23,25 @@
 
 -- require('themes.tokyodark')
 
+local ok, onenord = pcall(require, "onenord")
+if not ok then
+    vim.cmd [[
+    colorscheme default
+    set background=dark
+    ]]
+end
+
+onenord.setup()
+
 -- This is what will get the config to install and not
 -- error out.
+--[[
 vim.cmd [[
+
 try
   colorscheme tokyonight
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
-  set background=dark
+  set background=NONE
 endtry
 ]]
