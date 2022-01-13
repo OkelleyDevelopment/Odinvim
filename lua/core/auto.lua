@@ -1,7 +1,13 @@
+--[[
+-- Auto commands
+--
+-- Author: Nicholas O'Kelley
+-- Updated: Jan 9, 2021
+--]]
+
 vim.cmd [[
   augroup _markdown
     autocmd!
-    autocmd FileType markdown setlocal wrap
     autocmd FileType markdown setlocal spell
   augroup end
 

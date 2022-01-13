@@ -1,4 +1,4 @@
- --[[
+--[[
  -- A custom minimal statusline
  --
  -- Author: Nicholas O'Kelley
@@ -8,17 +8,18 @@
  --
  --
  --]]
-  
- -------------------------- Status Line ---------------------------
- local statusline = '%#CursorLineNr#'
- statusline = statusline .. ' %y' 
- statusline = statusline .. ' %M' 
- statusline = statusline .. ' %r'
- statusline = statusline .. ' %f' 
- statusline = statusline .. '%='
- statusline = statusline .. '%#CursorLineNr#' 
- statusline = statusline .. ' %l/%L' 
-statusline = statusline .. ' %p%%' 
-statusline = statusline .. ' [%n]'
+
+-------------------------- Status Line ---------------------------
+
+local statusline = "%#CursorLineNr#"
+statusline = statusline .. " %y"
+statusline = statusline .. " %M"
+statusline = statusline .. " %r"
+statusline = statusline .. " %f"
+statusline = statusline .. "%="
+statusline = statusline .. "%#CursorLineNr#"
+statusline = statusline .. " %l/%L"
+statusline = statusline .. " %p%%"
+statusline = statusline .. " [%n]"
 
 return statusline

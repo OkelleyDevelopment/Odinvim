@@ -2,6 +2,8 @@
 
 Author: Nicholas O'Kelley
 
+<img src="./assets/Default.png" width="800" height="600" />
+
 ## Motivation
 
 Instead of relying on third party plugins for LSP like my old ([Nvim-config](https://github.com/OkelleyDevelopment/Nvim-Config)),
@@ -21,20 +23,22 @@ evolves.
 - [x] Autocomplete (Just need to setup the servers correctly to your needs)
   - [x] friendly-snippets has some good stuff here too
 - [x] Telescope
-- [ ] Format on save (Without errors is preferable LOL)
-- [ ] Zen mode (Might drop this idea)
+- [x] Format on save utilizing `null-ls`
+- [x] Zen mode
 
 ## Prerequisites
 
-You will need the following installed:
-
-- NEOVIM (0.5+ -- will not work otherwise)
-- `clangd`
-- `pip install pynvim`
-- `npm i -g neovim`
-  - Make sure you configure Node to be user level (no sudo + node)
-- `ripgrep (rg)`
-  - If you wish to utilize the `live_grep` (`<leader>g`) portion of the Telescope plugin
+- NEOVIM (v0.5.0+)
+- Install the following for my setup:
+  - `cargo install stylua` (lua formatter)
+  - `pip install black` (python formatter)
+  - `npm install -g prettier` (Assumes your npm setup is for user level perms only)
+    - `clangd`
+    - `pip install pynvim`
+    - `npm i -g neovim`
+      - Make sure you configure Node to be user level (no sudo + node)
+    - `ripgrep (rg)`
+      - If you wish to utilize the `live_grep` (`<leader>g`) portion of the Telescope plugin
 
 I've shift my opinion on how installs will work, for now just manually make sure they
 are installed and things should work smoothly.
@@ -43,7 +47,7 @@ are installed and things should work smoothly.
 
 ### Manual
 
-**IMPORTANT**: Config is built on Neovim v0.7.0+, but should work on [v0.6.0](https://github.com/neovim/neovim/releases/tag/v0.6.0)
+**IMPORTANT**: Keep in mind this config is built on Neovim v0.7.0+
 
 ```
 git clone https://github.com/OkelleyDevelopment/Odinvim.git ~/.config/nvim
@@ -70,27 +74,10 @@ the mapping is made.
 
 ## Tools and Utilities
 
-### File Exploration
-
 - `lir.nvim` - Simple file explorer for easier file navigation around projects
-
-### Git
-
 - `gitsigns` - git gutter indicators and hunk management
-
-### Telescope
-
 - `nvim-telescope/telescope.nvim` - Project fuzzy finder
-
-### Formatting (Still a WIP)
-
-Currently utilizing `prettier` for formatting markdown, json, etc. Some settings
-still need to be worked out and will be addressed soon.
-
-- `mhartington/formater.nvim`
-
-Note: Terminal might show an issue with prettier but the documents do get formatted so
-so it works for me.
+- `folke/zen-mode.nvim` - Distraction free mode (Minor Adjustments to be made)
 
 ## LSP and Code Completion
 
@@ -108,12 +95,19 @@ so it works for me.
 
 - `neovim/nvim-lspconfig` -- Collection of configurations for built-in LSP client
 - `williamboman/nvim-lsp-installer` -- simple to use language server installer
-- `tamago324/nlsp-settings.nvim` -- language server settings defined in json
+- `tamago324/nlsp-settings.nvim` -- language server settings defined in JSON
 
 ## Appearance
 
 - Themes - Themes found around that I felt were neat, more can be added :)
+  - Onenord (Currently Set)
   - Material Ocean
-  - Tokyonight (Currently set)
+  - Tokyonight
   - Rose-pine
   - Nord
+
+## Extra Pictures
+
+![Lir](./assets/lir.png)
+
+![telescope live grep](./assets/telescope_live_grep.png)

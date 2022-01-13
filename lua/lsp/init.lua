@@ -5,10 +5,10 @@
 -- Updated: Jan 3, 2021
 --]]
 
-local ok, lspconfig = pcall(require, 'lspconfig')
+local ok, lspconfig = pcall(require, "lspconfig")
 if not ok then
     return
 end
 
-require('lsp.servers')
-require('lsp.core').setup()
+require "lsp.servers"
+require("lsp.core").setup()
