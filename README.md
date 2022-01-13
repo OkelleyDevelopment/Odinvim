@@ -46,7 +46,7 @@ evolves.
 I've shift my opinion on how installs will work, for now just manually make sure they
 are installed and things should work smoothly.
 
-### Manual
+## Manual Install
 
 **IMPORTANT**: Keep in mind this config is built on Neovim v0.7.0+
 
