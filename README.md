@@ -2,6 +2,8 @@
 
 Author: Nicholas O'Kelley
 
+![Odinvim](./assets/Default.png)
+
 ## Motivation
 
 Instead of relying on third party plugins for LSP like my old ([Nvim-config](https://github.com/OkelleyDevelopment/Nvim-Config)),
@@ -22,23 +24,21 @@ evolves.
   - [x] friendly-snippets has some good stuff here too
 - [x] Telescope
 - [x] Format on save utilizing `null-ls`
-  - Install the following for my setup:
-    - `cargo install stylua` (lua formatter)
-    - `pip install black` (python formatter)
-    - `npm install -g prettier` (Assumes your npm setup is for user level perms only)
 - [x] Zen mode
 
 ## Prerequisites
 
-You will need the following installed:
-
-- NEOVIM (0.5+ -- will not work otherwise)
-- `clangd`
-- `pip install pynvim`
-- `npm i -g neovim`
-  - Make sure you configure Node to be user level (no sudo + node)
-- `ripgrep (rg)`
-  - If you wish to utilize the `live_grep` (`<leader>g`) portion of the Telescope plugin
+- NEOVIM (v0.5.0+)
+- Install the following for my setup:
+  - `cargo install stylua` (lua formatter)
+  - `pip install black` (python formatter)
+  - `npm install -g prettier` (Assumes your npm setup is for user level perms only)
+    - `clangd`
+    - `pip install pynvim`
+    - `npm i -g neovim`
+      - Make sure you configure Node to be user level (no sudo + node)
+    - `ripgrep (rg)`
+      - If you wish to utilize the `live_grep` (`<leader>g`) portion of the Telescope plugin
 
 I've shift my opinion on how installs will work, for now just manually make sure they
 are installed and things should work smoothly.
@@ -47,7 +47,7 @@ are installed and things should work smoothly.
 
 ### Manual
 
-**IMPORTANT**: Config is built on Neovim v0.7.0+, but should work on [v0.6.0](https://github.com/neovim/neovim/releases/tag/v0.6.0) and _should_ work on v0.5.0
+**IMPORTANT**: Keep in mind this config is built on Neovim v0.7.0+
 
 ```
 git clone https://github.com/OkelleyDevelopment/Odinvim.git ~/.config/nvim
@@ -74,23 +74,10 @@ the mapping is made.
 
 ## Tools and Utilities
 
-### File Exploration
-
 - `lir.nvim` - Simple file explorer for easier file navigation around projects
-
-### Git
-
 - `gitsigns` - git gutter indicators and hunk management
-
-### Telescope
-
 - `nvim-telescope/telescope.nvim` - Project fuzzy finder
-
-### Zen Mode
-
-- `folke/zen-mode.nvim` - Distraction free mode
-
-Note: Still adjusting some settings, but full screen terminal and it works!
+- `folke/zen-mode.nvim` - Distraction free mode (Minor Adjustments to be made)
 
 ## LSP and Code Completion
 
@@ -118,3 +105,9 @@ Note: Still adjusting some settings, but full screen terminal and it works!
   - Tokyonight
   - Rose-pine
   - Nord
+
+## Extra Pictures
+
+![Lir](./assets/lir.png)
+
+![telescope live grep](./assets/telescope_live_grep.png)
