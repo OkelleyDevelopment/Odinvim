@@ -19,8 +19,8 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
         "https://github.com/wbthomason/packer.nvim",
         install_path,
     }
-    print "Packer was installed. Close and reopen Neovim"
-    vim.cmd [[packadd packer.nvim]]
+    print "Packer installing"
+    --vim.cmd [[packadd packer.nvim]]
 end
 
 vim.cmd [[packadd packer.nvim]]
@@ -104,7 +104,12 @@ return packer.startup(function(use)
             "nvim-lua/plenary.nvim",
         },
         config = function()
-            require("gitsigns").setup()
+            --require("gitsigns").setup()
+            local ok, gitsigns = pcall(require, "gitsigns")
+            if not ok then
+                return
+            end
+            gitsigns.setup()
         end,
     }
     -- File browser
@@ -158,5 +163,6 @@ return packer.startup(function(use)
     -- This is what will finish out the bootstrap
     if PACKER then
         require("packer").sync()
+        print "Close and reopen neovim to active Odinvim"
     end
 end)

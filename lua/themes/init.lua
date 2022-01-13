@@ -29,6 +29,7 @@ if not ok then
     colorscheme default
     set background=dark
     ]]
+    return
 end
 
 onenord.setup()
