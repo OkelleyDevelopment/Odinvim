@@ -90,6 +90,13 @@ return packer.startup(function(use)
     -- use('sainnhe/everforest')
     -- use 'tiagovla/tokyodark.nvim'
     use "OkelleyDevelopment/vim-solidity"
+    use {
+        "aklt/plantuml-syntax",
+        requires = {
+            "tyru/open-browser.vim",
+            "weirongxu/plantuml-previewer.vim",
+        },
+    }
 
     ----- Tools and Utilities -----
 
@@ -105,8 +112,8 @@ return packer.startup(function(use)
         },
         config = function()
             --require("gitsigns").setup()
-            local ok, gitsigns = pcall(require, "gitsigns")
-            if not ok then
+            local okay, gitsigns = pcall(require, "gitsigns")
+            if not okay then
                 return
             end
             gitsigns.setup()
@@ -131,7 +138,8 @@ return packer.startup(function(use)
     --------- Snippets Support ---------
 
     use { "L3MON4D3/LuaSnip" } -- the snippets engine
-    use "rafamadriz/friendly-snippets" -- snippets we can use
+    --use "rafamadriz/friendly-snippets" -- snippets we can use
+    use "OkelleyDevelopment/friendly-snippets"
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
 
     --------- Code Completion ---------
@@ -141,9 +149,10 @@ return packer.startup(function(use)
         "hrsh7th/nvim-cmp",
         requires = {
             { "hrsh7th/cmp-buffer" },
-            { "hrsh7th/cmp-nvim-lua" },
+            { "hrsh7th/cmp-nvim-lua", ft = "lua" },
             { "hrsh7th/cmp-nvim-lsp" },
             { "hrsh7th/cmp-path" },
+            { "saadparwaiz1/cmp_luasnip" }, -- luasnip completion source for nvim-cmp
             { "hrsh7th/cmp-calc" },
         },
     }
