@@ -10,7 +10,6 @@ end
 
 ---------------------------------------------------------------------
 -- Found this trick from Chris@Machine
---require("luasnip/loaders/from_vscode").lazy_load { path = "./my-snippets" }
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
