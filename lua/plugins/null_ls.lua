@@ -26,7 +26,7 @@ local formatting = null.builtins.formatting
 local sources = {
     formatting.prettier.with {
         filetype = { "html", "json", "yaml", "markdown" },
-        extra_filetypes = { "toml", "solidity" },
+        extra_filetypes = { "toml", "solidity", "plantuml" },
         extra_args = {
             "--no-semi",
             "--single-quote",

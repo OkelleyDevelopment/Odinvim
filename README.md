@@ -26,8 +26,17 @@ evolves.
 - [x] Format on save utilizing `null-ls`
 - [x] Zen mode
 
-
 ## Setup
+
+## Automatic install
+
+Coming soon, will be a script that can install the dependencies for you
+and then start Neovim so that when you load first time, it's all ready
+to go.
+
+## Manual Install
+
+**IMPORTANT**: Keep in mind this config is built on Neovim v0.7.0+
 
 ### Prerequisites
 
@@ -45,10 +54,6 @@ evolves.
 
 I've shift my opinion on how installs will work, for now just manually make sure they
 are installed and things should work smoothly.
-
-## Manual Install
-
-**IMPORTANT**: Keep in mind this config is built on Neovim v0.7.0+
 
 ```
 git clone https://github.com/OkelleyDevelopment/Odinvim.git ~/.config/nvim
@@ -71,7 +76,9 @@ The basic modes include {'n': normal, 'i': insert, 'v': visual}. The `mapping` i
 keys you will press to get the action, and `command` is the command that would execute once
 the mapping is made.
 
-### Plugins (`./lua/plugins/plugs.lua`)
+### Plugins
+
+Can be found here `./lua/plugins/plugs.lua`
 
 - `packer.nvim` - lua plugin manager to auto-install and update plugins
 
