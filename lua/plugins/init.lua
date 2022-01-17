@@ -80,12 +80,12 @@ return packer.startup(function(use)
     use { "wbthomason/packer.nvim", opt = true }
 
     ----- Themes -----
-    -- use 'marko-cerovac/material.nvim'
-    -- use({ 'rose-pine/neovim', as = 'rose-pine'})
-    -- use 'shaunsingh/nord.nvim'
-    --use "folke/tokyonight.nvim"
+    use "marko-cerovac/material.nvim"
+    use { "rose-pine/neovim", as = "rose-pine" }
+    use "shaunsingh/nord.nvim"
+    use "folke/tokyonight.nvim"
     use "rmehri01/onenord.nvim"
-    -- use 'theniceboy/nvim-deus'
+    use "theniceboy/nvim-deus"
     -- use 'logico/typewriter-vim'
     -- use('sainnhe/everforest')
     -- use 'tiagovla/tokyodark.nvim'
@@ -156,6 +156,13 @@ return packer.startup(function(use)
             { "hrsh7th/cmp-calc" },
         },
     }
+
+    -- Treesitter
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+    }
+    use "windwp/nvim-ts-autotag"
 
     --------- Language Server Plugins ---------
 
