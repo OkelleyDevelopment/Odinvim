@@ -69,13 +69,9 @@ require "plugins.zen"
 --
 -- Todo Comments
 require "plugins.todo"
-
--- TODO: Work on the comment
--- HACK:
--- PERF:
--- NOTE:
--- FIXME:
--- WARN:
+--
+-- Twilight Code Focus
+require "plugins.twilight"
 
 ------------------- End Require Plugins -------------------------
 --
@@ -145,6 +141,9 @@ return packer.startup(function(use)
         "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim",
     }
+
+    -- Twilight Mode
+    use { "folke/twilight.nvim" }
 
     -- Zen Mode
     use { "folke/zen-mode.nvim" }
