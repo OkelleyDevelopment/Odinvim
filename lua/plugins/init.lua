@@ -2,7 +2,7 @@
 -- Plugin Requires, install, packer setup, and more!
 --
 -- Author: Nicholas O'Kelley
--- Updated: Jan 9, 2021
+-- Updated: Jan 9, 2022
 --]]
 --
 ------------------- Automatically Install Packer.nvim -------------------------
@@ -58,9 +58,6 @@ require "plugins.lir"
 -- Autopair ({"[]"})
 require "plugins.autopairs"
 --
--- Code Formatting (Currently supports python and markdown)
---require 'plugins.formatter'
---
 -- Telescope
 require "plugins.telescope"
 --
@@ -69,6 +66,16 @@ require "plugins.null_ls"
 --
 -- Zen Mode
 require "plugins.zen"
+--
+-- Todo Comments
+require "plugins.todo"
+
+-- TODO: Work on the comment
+-- HACK:
+-- PERF:
+-- NOTE:
+-- FIXME:
+-- WARN:
 
 ------------------- End Require Plugins -------------------------
 --
@@ -127,23 +134,30 @@ return packer.startup(function(use)
             { "tamago324/lir-git-status.nvim" },
         },
     }
+    -- Project Fuzzy Finder
     use {
         "nvim-telescope/telescope.nvim",
         requires = { { "nvim-lua/plenary.nvim" } },
     }
 
-    -- File Formatting (Might be removed for null-ls)
-    --use {"mhartington/formatter.nvim"}
+    -- Todo comment highlighter
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+    }
 
+    -- Zen Mode
+    use { "folke/zen-mode.nvim" }
+    --
     --------- Snippets Support ---------
-
+    --
     use { "L3MON4D3/LuaSnip" } -- the snippets engine
     --use "rafamadriz/friendly-snippets" -- snippets we can use
-    use "OkelleyDevelopment/friendly-snippets"
+    use "OkelleyDevelopment/friendly-snippets" -- Forked my own version
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
-
+    --
     --------- Code Completion ---------
-
+    --
     use "jose-elias-alvarez/null-ls.nvim" -- formatters and linters
     use {
         "hrsh7th/nvim-cmp",
@@ -163,18 +177,15 @@ return packer.startup(function(use)
         run = ":TSUpdate",
     }
     use "windwp/nvim-ts-autotag"
-
+    --
     --------- Language Server Plugins ---------
-
+    --
     use { "neovim/nvim-lspconfig" } -- Collection of configurations for built-in LSP clientJkh
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
     use "tamago324/nlsp-settings.nvim" -- language server settings defined in json
 
     -- Java
     use "mfussenegger/nvim-jdtls"
-
-    -- Zen Mode
-    use { "folke/zen-mode.nvim" }
 
     -- This is what will finish out the bootstrap
     if PACKER then
