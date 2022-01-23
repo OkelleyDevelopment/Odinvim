@@ -2,7 +2,7 @@
 -- Language Server Protocol Information
 --
 -- Author: Nicholas O'Kelley
--- Updated: Jan 3, 2021
+-- Updated: Jan 3, 2022
 --]]
 
 local ok, lspconfig = pcall(require, "lspconfig")

@@ -17,11 +17,7 @@ end
 local utils = require "utils"
 local opts = { silent = true }
 
-utils.map(
-    "n",
-    "<leader>e",
-    "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({previewer = false}))<cr>",
-    opts
-)
+utils.map("n", "<leader>t", "<cmd>:TodoLocList<cr>", opts)
+utils.map("n", "<leader>c", "<cmd>:q<cr>", opts)
 
 todo.setup {}

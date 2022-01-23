@@ -2,7 +2,7 @@
 -- Odinvim Core key mappings
 --
 -- Author: Nicholas O'Kelley
--- Updated: Jan 9, 2021
+-- Updated: Jan 9, 2022
 --]]
 
 require "core.settings"
