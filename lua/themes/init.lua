@@ -13,19 +13,19 @@
 -- ]]
 ------------------------------------------------------------------------------------------
 
--- require('themes.tokyodark')
 -- local ok, rose = pcall(require, "rose-pine")
+--local ok, tokyonight = pcall(require, "tokyonight-nvim")
+--require "tokyonight"
 --local ok, nord = pcall(require, "nord")
-local ok, onenord = pcall(require, "onenord")
+--local ok, onenord = pcall(require, "onenord")
+-- local ok, no_clown_fiesta = pcall(require, "no-clown-fiesta")
 
-if not ok then
-    vim.cmd [[
-    colorscheme default
-    set background=dark
-    return
-    ]]
-end
+local ok, lighthaus = pcall(require, "lighthaus")
 
-onenord.setup()
+vim.opt.termguicolors = true
+vim.cmd [[colorscheme lighthaus]]
+
+--onenord.setup()
+--no_clown_fiesta.set()
 --rose.set()
 --nord.set()

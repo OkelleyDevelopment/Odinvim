@@ -32,13 +32,15 @@ vim.cmd "autocmd BufWritePost init.lua PackerCompile"
 
 local ok, packer = pcall(require, "packer")
 if not ok then
-    print "Packer missing"
+    print "Packer missing, check lua/plugins/init.lua"
     return
 end
 
+--
 -- Discussions with others has led me to this approach, Chris was
 -- the latest, but I had in some notes where Vhyrro was mentioning
 -- how to handle loading.
+--
 packer.init {
     display = {
         open_fn = function()
@@ -48,6 +50,8 @@ packer.init {
 }
 
 ------------------- Require Plugins -------------------------
+--
+--require "plugins.plugins"
 --
 -- Completion
 require "plugins.cmp"
@@ -75,7 +79,14 @@ require "plugins.twilight"
 
 ------------------- End Require Plugins -------------------------
 --
-------------------- Packer Configs --------------------
+--
+------------------ Packer Configs --------------------
+
+local ok, packer = pcall(require, "packer")
+
+if not ok then
+    return
+end
 
 -- This makes the linter not scream at me
 return packer.startup(function(use)
@@ -89,9 +100,13 @@ return packer.startup(function(use)
     use "folke/tokyonight.nvim"
     use "rmehri01/onenord.nvim"
     use "theniceboy/nvim-deus"
-    -- use 'logico/typewriter-vim'
-    -- use('sainnhe/everforest')
-    -- use 'tiagovla/tokyodark.nvim'
+    use "logico/typewriter-vim"
+    use "sainnhe/everforest"
+    use "tiagovla/tokyodark.nvim"
+    use "aktersnurra/no-clown-fiesta.nvim"
+    use "mrjones2014/lighthaus.nvim"
+
+    ----- Syntax Highlight ----
     use "OkelleyDevelopment/vim-solidity"
     use {
         "aklt/plantuml-syntax",
@@ -175,7 +190,8 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
     }
-    use "windwp/nvim-ts-autotag"
+    -- Dang thing doesn't work half the time
+    --use "windwp/nvim-ts-autotag"
     --
     --------- Language Server Plugins ---------
     --
@@ -189,6 +205,10 @@ return packer.startup(function(use)
     -- This is what will finish out the bootstrap
     if PACKER then
         require("packer").sync()
-        print "Close and reopen neovim to active Odinvim"
+        print "------------------------------------------------"
+        print "Hello! \nHit enter and let the plugins install."
+        print "Then exit and reopen Neovim to apply the "
+        print "Odinvim configuations!"
+        print "------------------------------------------------"
     end
 end)

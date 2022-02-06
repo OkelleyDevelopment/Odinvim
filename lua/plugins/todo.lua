@@ -8,7 +8,6 @@
 local ok, todo = pcall(require, "todo-comments")
 
 if not ok then
-    print "not okay"
     return
 end
 
@@ -17,7 +16,7 @@ end
 local utils = require "utils"
 local opts = { silent = true }
 
-utils.map("n", "<leader>t", "<cmd>:TodoLocList<cr>", opts)
+utils.map("n", "<leader>l", "<cmd>:TodoLocList<cr>", opts)
 utils.map("n", "<leader>c", "<cmd>:q<cr>", opts)
 
 todo.setup {}
