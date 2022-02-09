@@ -83,7 +83,7 @@ local function lsp_keymaps(bufnr)
     vim.api.nvim_buf_set_keymap(
         bufnr,
         "n",
-        "<C-k>",
+        "<C-K>",
         "<cmd>lua vim.lsp.buf.signature_help()<CR>",
         opts
     )
