@@ -14,16 +14,18 @@
 ------------------------------------------------------------------------------------------
 
 -- local ok, rose = pcall(require, "rose-pine")
---local ok, tokyonight = pcall(require, "tokyonight-nvim")
+local ok, tokyonight = pcall(require, "tokyonight-nvim")
 --require "tokyonight"
 --local ok, nord = pcall(require, "nord")
 --local ok, onenord = pcall(require, "onenord")
 -- local ok, no_clown_fiesta = pcall(require, "no-clown-fiesta")
 
-local ok, lighthaus = pcall(require, "lighthaus")
+--local ok, lighthaus = pcall(require, "lighthaus")
 
 vim.opt.termguicolors = true
-vim.cmd [[colorscheme lighthaus]]
+--vim.cmd [[colorscheme lighthaus]]
+vim.cmd [[colorscheme tokyonight]]
+--
 
 --onenord.setup()
 --no_clown_fiesta.set()
