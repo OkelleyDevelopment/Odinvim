@@ -25,14 +25,16 @@ evolves.
 - [x] Telescope
 - [x] Format on save utilizing `null-ls`
 - [x] Zen mode
+- [ ] Nerd Fonts
 
 ## Setup
 
 ## Automatic install
 
-Coming soon, will be a script that can install the dependencies for you
-and then start Neovim so that when you load first time, it's all ready
-to go.
+A script to automate this process is in the works, however
+all the plugins will auto-install on the first launch of neovim
+as it currently stands. You will just have to exit and then reload
+neovim.
 
 ## Manual Install
 
@@ -40,17 +42,17 @@ to go.
 
 ### Prerequisites
 
-- NEOVIM (v0.5.0+)
+- NEOVIM (v0.6.0+)
 - Install the following for my setup:
+  - `clangd`
   - `cargo install stylua` (lua formatter)
   - `pip install black` (python formatter)
+  - `pip install pynvim`
+  - `ripgrep (rg)`
+    - If you wish to utilize the `live_grep` (`<leader>g`) portion of the Telescope plugin
   - `npm install -g prettier` (Assumes your npm setup is for user level perms only)
-    - `clangd`
-    - `pip install pynvim`
-    - `npm i -g neovim`
-      - Make sure you configure Node to be user level (no sudo + node)
-    - `ripgrep (rg)`
-      - If you wish to utilize the `live_grep` (`<leader>g`) portion of the Telescope plugin
+  - `npm i -g neovim`
+    - Make sure you configure Node to be user level (no sudo + node)
 
 I've shift my opinion on how installs will work, for now just manually make sure they
 are installed and things should work smoothly.
@@ -66,7 +68,7 @@ git clone https://github.com/OkelleyDevelopment/Odinvim.git ~/.config/nvim
 The key mappings are bootstrapped from within the `lua/config/keys.lua`. If you
 wish to remove, simply comment out or delete the line.
 
-If you wish to add a mapping, it is made easy with a utils function in the format:
+If you wish to add a mapping, it is made easy with a utilities function in the format:
 
 ```
 utils.map(mode, mapping, command, opts)

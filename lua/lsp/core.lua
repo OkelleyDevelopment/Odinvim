@@ -6,7 +6,7 @@
 -- too)
 --
 -- Author: Nicholas O'Kelley
--- Updated: Jan 3, 2021
+-- Updated: Jan 3, 2022
 --]]
 
 local M = {}
@@ -83,7 +83,7 @@ local function lsp_keymaps(bufnr)
     vim.api.nvim_buf_set_keymap(
         bufnr,
         "n",
-        "<C-k>",
+        "<C-K>",
         "<cmd>lua vim.lsp.buf.signature_help()<CR>",
         opts
     )

@@ -4,7 +4,7 @@
 -- Can be configured in the text = "" portion, I opted to not have anything for now
 --
 -- Author: Nicholas O'Kelley
--- Updated: Jan 3, 2021
+-- Updated: Jan 3, 2022
 --]]
 
 local signs = {

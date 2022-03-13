@@ -2,7 +2,7 @@
 -- Odinvim Core settings
 --
 -- Author: Nicholas O'Kelley
--- Updated: Jan 9, 2021
+-- Updated: Jan 9, 2022
 --]]
 
 local utils = require "utils"
@@ -39,7 +39,7 @@ set("o", "showmode", false)
 set("o", "updatetime", 100)
 set("o", "timeoutlen", 300)
 set("o", "clipboard", "unnamed,unnamedplus")
-set("w", "colorcolumn", "90")
+set("w", "colorcolumn", "80")
 set("o", "scrolloff", 4)
 set("o", "smartcase", true)
 set("w", "wrap", false)

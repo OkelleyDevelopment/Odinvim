@@ -2,7 +2,7 @@
 -- Servers for LSP
 --
 -- Author: Nicholas O'Kelley
--- Updated: Jan 3, 2021
+-- Updated: Jan 3, 2022
 --]]
 
 local ok, lsp_installer = pcall(require, "nvim-lsp-installer")

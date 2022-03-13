@@ -2,7 +2,7 @@
 -- Plugin Requires, install, packer setup, and more!
 --
 -- Author: Nicholas O'Kelley
--- Updated: Jan 9, 2021
+-- Updated: Jan 9, 2022
 --]]
 --
 ------------------- Automatically Install Packer.nvim -------------------------
@@ -32,13 +32,15 @@ vim.cmd "autocmd BufWritePost init.lua PackerCompile"
 
 local ok, packer = pcall(require, "packer")
 if not ok then
-    print "Packer missing"
+    print "Packer missing, check lua/plugins/init.lua"
     return
 end
 
+--
 -- Discussions with others has led me to this approach, Chris was
 -- the latest, but I had in some notes where Vhyrro was mentioning
 -- how to handle loading.
+--
 packer.init {
     display = {
         open_fn = function()
@@ -49,6 +51,8 @@ packer.init {
 
 ------------------- Require Plugins -------------------------
 --
+--require "plugins.plugins"
+--
 -- Completion
 require "plugins.cmp"
 --
@@ -58,9 +62,6 @@ require "plugins.lir"
 -- Autopair ({"[]"})
 require "plugins.autopairs"
 --
--- Code Formatting (Currently supports python and markdown)
---require 'plugins.formatter'
---
 -- Telescope
 require "plugins.telescope"
 --
@@ -69,10 +70,23 @@ require "plugins.null_ls"
 --
 -- Zen Mode
 require "plugins.zen"
+--
+-- Todo Comments
+require "plugins.todo"
+--
+-- Twilight Code Focus
+require "plugins.twilight"
 
 ------------------- End Require Plugins -------------------------
 --
-------------------- Packer Configs --------------------
+--
+------------------ Packer Configs --------------------
+
+local ok, packer = pcall(require, "packer")
+
+if not ok then
+    return
+end
 
 -- This makes the linter not scream at me
 return packer.startup(function(use)
@@ -86,9 +100,13 @@ return packer.startup(function(use)
     use "folke/tokyonight.nvim"
     use "rmehri01/onenord.nvim"
     use "theniceboy/nvim-deus"
-    -- use 'logico/typewriter-vim'
-    -- use('sainnhe/everforest')
-    -- use 'tiagovla/tokyodark.nvim'
+    use "logico/typewriter-vim"
+    use "sainnhe/everforest"
+    use "tiagovla/tokyodark.nvim"
+    use "aktersnurra/no-clown-fiesta.nvim"
+    use "mrjones2014/lighthaus.nvim"
+
+    ----- Syntax Highlight ----
     use "OkelleyDevelopment/vim-solidity"
     use {
         "aklt/plantuml-syntax",
@@ -127,23 +145,33 @@ return packer.startup(function(use)
             { "tamago324/lir-git-status.nvim" },
         },
     }
+    -- Project Fuzzy Finder
     use {
         "nvim-telescope/telescope.nvim",
         requires = { { "nvim-lua/plenary.nvim" } },
     }
 
-    -- File Formatting (Might be removed for null-ls)
-    --use {"mhartington/formatter.nvim"}
+    -- Todo comment highlighter
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+    }
 
+    -- Twilight Mode
+    use { "folke/twilight.nvim" }
+
+    -- Zen Mode
+    use { "folke/zen-mode.nvim" }
+    --
     --------- Snippets Support ---------
-
+    --
     use { "L3MON4D3/LuaSnip" } -- the snippets engine
     --use "rafamadriz/friendly-snippets" -- snippets we can use
-    use "OkelleyDevelopment/friendly-snippets"
+    use "OkelleyDevelopment/friendly-snippets" -- Forked my own version
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
-
+    --
     --------- Code Completion ---------
-
+    --
     use "jose-elias-alvarez/null-ls.nvim" -- formatters and linters
     use {
         "hrsh7th/nvim-cmp",
@@ -162,10 +190,11 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
     }
-    use "windwp/nvim-ts-autotag"
-
+    -- Dang thing doesn't work half the time
+    --use "windwp/nvim-ts-autotag"
+    --
     --------- Language Server Plugins ---------
-
+    --
     use { "neovim/nvim-lspconfig" } -- Collection of configurations for built-in LSP clientJkh
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
     use "tamago324/nlsp-settings.nvim" -- language server settings defined in json
@@ -173,12 +202,13 @@ return packer.startup(function(use)
     -- Java
     use "mfussenegger/nvim-jdtls"
 
-    -- Zen Mode
-    use { "folke/zen-mode.nvim" }
-
     -- This is what will finish out the bootstrap
     if PACKER then
         require("packer").sync()
-        print "Close and reopen neovim to active Odinvim"
+        print "------------------------------------------------"
+        print "Hello! \nHit enter and let the plugins install."
+        print "Then exit and reopen Neovim to apply the "
+        print "Odinvim configuations!"
+        print "------------------------------------------------"
     end
 end)

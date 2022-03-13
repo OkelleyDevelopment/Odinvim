@@ -1,3 +1,10 @@
+--[[
+--  Zen mode configuration setup.
+--
+-- Author: Nicholas O'Kelley
+-- Updated: Jan 22, 2022
+--]]
+
 local ok, zen = pcall(require, "zen-mode")
 
 if not ok then

@@ -2,7 +2,7 @@
 -- Telescope configuration setup.
 --
 -- Author: Nicholas O'Kelley
--- Updated: Jan 9, 2021
+-- Updated: Jan 9, 2022
 --]]
 
 local ok, telescope = pcall(require, "telescope")
@@ -31,7 +31,7 @@ telescope.setup {
         -- Default configuration for telescope goes here:
         -- config_key = value,
         prompt_prefix = "",
-        selection_caret = ">",
+        selection_caret = "> ",
         path_display = { "smart" },
 
         mappings = {
@@ -39,7 +39,7 @@ telescope.setup {
                 -- map actions.which_key to <C-h> (default: <C-/>)
                 -- actions.which_key shows the mappings for your picker,
                 -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-                ["<C-h>"] = "which_key",
+                --["<C-h>"] = "which_key",
             },
         },
     },

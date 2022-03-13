@@ -2,7 +2,7 @@
 -- null-ls configuration setup.
 --
 -- Author: Nicholas O'Kelley
--- Updated: Jan 9, 2021
+-- Updated: Jan 9, 2022
 --]]
 
 local ok, null = pcall(require, "null-ls")
@@ -21,8 +21,11 @@ utils.map("n", "<leader>s", "<cmd>lua vim.lsp.buf.formatting_sync()<cr>", opts)
 
 local formatting = null.builtins.formatting
 
--- I have solidity specified because I found a prettier addition that
+-- TODO: I have solidity specified because I found a prettier addition that
 -- might work well
+-- NOTE: Removed the "--jsx-single-quote", from prettier so Next App could load links
+-- Will revisit later
+
 local sources = {
     formatting.prettier.with {
         filetype = { "html", "json", "yaml", "markdown" },
@@ -30,7 +33,6 @@ local sources = {
         extra_args = {
             "--no-semi",
             "--single-quote",
-            "--jsx-single-quote",
         },
     },
     formatting.black.with { extra_args = { "--fast" } },
