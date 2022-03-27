@@ -2,7 +2,7 @@
 -- Plugin Requires, install, packer setup, and more!
 --
 -- Author: Nicholas O'Kelley
--- Updated: Jan 9, 2022
+-- Updated: March 26, 2022
 --]]
 --
 ------------------- Automatically Install Packer.nvim -------------------------
@@ -76,7 +76,7 @@ require "plugins.todo"
 --
 -- Twilight Code Focus
 require "plugins.twilight"
-
+--
 ------------------- End Require Plugins -------------------------
 --
 --
@@ -94,27 +94,22 @@ return packer.startup(function(use)
     use { "wbthomason/packer.nvim", opt = true }
 
     ----- Themes -----
-    use "marko-cerovac/material.nvim"
-    use { "rose-pine/neovim", as = "rose-pine" }
-    use "shaunsingh/nord.nvim"
-    use "folke/tokyonight.nvim"
-    use "rmehri01/onenord.nvim"
-    use "theniceboy/nvim-deus"
-    use "logico/typewriter-vim"
-    use "sainnhe/everforest"
-    use "tiagovla/tokyodark.nvim"
-    use "aktersnurra/no-clown-fiesta.nvim"
-    use "mrjones2014/lighthaus.nvim"
+    use "rebelot/kanagawa.nvim"
+    --use "marko-cerovac/material.nvim"
+    --use { "rose-pine/neovim", as = "rose-pine" }
+    --use "shaunsingh/nord.nvim"
+    --use "folke/tokyonight.nvim"
+    --use "rmehri01/onenord.nvim"
+    --use "theniceboy/nvim-deus"
+    --use "logico/typewriter-vim"
+    --use "sainnhe/everforest"
+    --use "tiagovla/tokyodark.nvim"
+    --use "aktersnurra/no-clown-fiesta.nvim"
+    --use "mrjones2014/lighthaus.nvim"
 
     ----- Syntax Highlight ----
     use "OkelleyDevelopment/vim-solidity"
-    use {
-        "aklt/plantuml-syntax",
-        requires = {
-            "tyru/open-browser.vim",
-            "weirongxu/plantuml-previewer.vim",
-        },
-    }
+    use "aklt/plantuml-syntax"
 
     ----- Tools and Utilities -----
 
@@ -137,6 +132,7 @@ return packer.startup(function(use)
             gitsigns.setup()
         end,
     }
+
     -- File browser
     use { "kyazdani42/nvim-web-devicons" }
     use {
@@ -190,9 +186,7 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
     }
-    -- Dang thing doesn't work half the time
-    --use "windwp/nvim-ts-autotag"
-    --
+
     --------- Language Server Plugins ---------
     --
     use { "neovim/nvim-lspconfig" } -- Collection of configurations for built-in LSP clientJkh
