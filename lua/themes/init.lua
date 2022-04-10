@@ -3,6 +3,7 @@
 --
 -- Author: Nicholas O'Kelley
 -----------------------------------------------------
+--]]
 
 vim.opt.termguicolors = true
 vim.cmd [[try

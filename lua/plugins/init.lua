@@ -2,7 +2,7 @@
 -- Plugin Requires, install, packer setup, and more!
 --
 -- Author: Nicholas O'Kelley
--- Updated: March 26, 2022
+-- Updated: April 9, 2022
 --]]
 --
 ------------------- Automatically Install Packer.nvim -------------------------
