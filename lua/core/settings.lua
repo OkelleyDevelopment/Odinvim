@@ -15,7 +15,7 @@ vim.g.mapleader = " " -- Map leader key
 
 -------------------------- General Settings ---------------------------
 
--- set('o', 'termguicolors', true)
+set("o", "termguicolors", true)
 set("o", "hidden", true)
 set("o", "encoding", "utf-8")
 set("o", "fileencoding", "utf-8")
@@ -32,7 +32,7 @@ set("o", "smartindent", true)
 set("b", "smartindent", true)
 set("b", "autoindent", true)
 set("w", "number", true)
---set('w', 'relativenumber', true)
+set("w", "relativenumber", true)
 set("o", "background", "dark")
 set("o", "conceallevel", 0)
 set("o", "showmode", false)

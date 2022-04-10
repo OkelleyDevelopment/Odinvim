@@ -2,15 +2,16 @@
 
 Author: Nicholas O'Kelley
 
-<img src="./assets/Default.png" width="800" height="600" />
+<img src="./assets/odinvim.png"  width="700" height="400" />
 
 ## Motivation
 
-Instead of relying on third party plugins for LSP like my old ([Nvim-config](https://github.com/OkelleyDevelopment/Nvim-Config)),
-this refresh aims to harness the power of the built in LSP that NeoVim 0.5+ offers.
+Having built a configuration with VimScript prior ([Nvim-config](https://github.com/OkelleyDevelopment/Nvim-Config)),
+this refresh aims to harness the power of the built in LSP support that Neovim 0.5+ offers.
 
-This configuration is by no means perfect and will continue to be updated as my work-flow
-evolves.
+This configuration is by no means perfect, but it was built by me over several months of work and learning.
+As good software should, this project will continue to have updates periodically as my workflow changes and
+better solutions are found.
 
 ## Included Features
 
@@ -27,38 +28,47 @@ evolves.
 - [x] Zen mode
 - [ ] Nerd Fonts
 
-## Setup
+## Installation
 
-## Automatic install
-
-A script to automate this process is in the works, however
-all the plugins will auto-install on the first launch of neovim
-as it currently stands. You will just have to exit and then reload
-neovim.
-
-## Manual Install
-
-**IMPORTANT**: Keep in mind this config is built on Neovim v0.7.0+
+**IMPORTANT**: This config is primarily built on Neovim nightly builds
 
 ### Prerequisites
 
-- NEOVIM (v0.6.0+)
-- Install the following for my setup:
-  - `clangd`
-  - `cargo install stylua` (lua formatter)
-  - `pip install black` (python formatter)
-  - `pip install pynvim`
-  - `ripgrep (rg)`
-    - If you wish to utilize the `live_grep` (`<leader>g`) portion of the Telescope plugin
-  - `npm install -g prettier` (Assumes your npm setup is for user level perms only)
-  - `npm i -g neovim`
-    - Make sure you configure Node to be user level (no sudo + node)
+Neovim (v0.6.0+)
+Install the following for my setup:
 
-I've shift my opinion on how installs will work, for now just manually make sure they
-are installed and things should work smoothly.
+- `clangd`
+- `cargo install stylua` (lua formatter)
+- `pip install black` (python formatter)
+- `pip install pynvim`
+- If you wish to utilize the `live_grep` (`<leader>g`) portion of the [Telescope plugin](https://github.com/nvim-telescope/telescope.nvim)
+  - `ripgrep (rg)`
+- Make sure you configure Node to be user level (no sudo + node)
+
+  - `npm i -g neovim`
+  - `npm install -g prettier` (Assumes your npm setup is for user level perms only)
+
+- For the [`nvim-markdown-previewer`](https://github.com/davidgranstrom/nvim-markdown-preview):
+  - Install pandoc
+  - `npm install -g live-server`
+
+### Final steps
+
+Assuming you have the extra bits installed, the rest will be a breeze.
 
 ```
 git clone https://github.com/OkelleyDevelopment/Odinvim.git ~/.config/nvim
+```
+
+Then follow the next sequence of steps:
+
+1. Open Neovim and wait for the installs to finish
+2. Exit Neovim
+3. Resume as normal
+4. Get healthy
+
+```
+:checkhealth
 ```
 
 ## Feature Breakdown
@@ -112,14 +122,26 @@ Can be found here `./lua/plugins/plugs.lua`
 ### Appearance
 
 - Themes - Themes found around that I felt were neat, more can be added :)
-  - Onenord (Currently Set)
-  - Material Ocean
+  - Kanagawa (Currently set)
+  - Nord
+  - Onenord
   - Tokyonight
   - Rose-pine
-  - Nord
+  - nvim-deus
+  - tokyodark.nvim
 
 ## Extra Pictures
 
-![Lir](./assets/lir.png)
+### Demo of `lir.nvim`
 
-![telescope live grep](./assets/telescope_live_grep.png)
+![Lir](./assets/lir_demo.png)
+
+### Demo of `nvim-telescope`
+
+![telescope live grep](./assets/telescope_demo.png)
+
+## Why Odinvim?
+
+I like projects with fun names and was originally trying to find a way to include
+`OkelleyDevelopment`. This then shifted to the fun play on the initials `OD` to
+become `Odinvim`.

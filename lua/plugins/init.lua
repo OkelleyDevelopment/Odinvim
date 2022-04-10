@@ -2,7 +2,7 @@
 -- Plugin Requires, install, packer setup, and more!
 --
 -- Author: Nicholas O'Kelley
--- Updated: Jan 9, 2022
+-- Updated: April 9, 2022
 --]]
 --
 ------------------- Automatically Install Packer.nvim -------------------------
@@ -19,7 +19,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
         "https://github.com/wbthomason/packer.nvim",
         install_path,
     }
-    print "Packer installing"
+    --print "Packer installing"
     --vim.cmd [[packadd packer.nvim]]
 end
 
@@ -32,7 +32,7 @@ vim.cmd "autocmd BufWritePost init.lua PackerCompile"
 
 local ok, packer = pcall(require, "packer")
 if not ok then
-    print "Packer missing, check lua/plugins/init.lua"
+    --print "Packer missing, check lua/plugins/init.lua"
     return
 end
 
@@ -52,31 +52,6 @@ packer.init {
 ------------------- Require Plugins -------------------------
 --
 --require "plugins.plugins"
---
--- Completion
-require "plugins.cmp"
---
--- File Exploration
-require "plugins.lir"
---
--- Autopair ({"[]"})
-require "plugins.autopairs"
---
--- Telescope
-require "plugins.telescope"
---
--- Null ls
-require "plugins.null_ls"
---
--- Zen Mode
-require "plugins.zen"
---
--- Todo Comments
-require "plugins.todo"
---
--- Twilight Code Focus
-require "plugins.twilight"
-
 ------------------- End Require Plugins -------------------------
 --
 --
@@ -94,34 +69,27 @@ return packer.startup(function(use)
     use { "wbthomason/packer.nvim", opt = true }
 
     ----- Themes -----
-    use "marko-cerovac/material.nvim"
-    use { "rose-pine/neovim", as = "rose-pine" }
-    use "shaunsingh/nord.nvim"
-    use "folke/tokyonight.nvim"
-    use "rmehri01/onenord.nvim"
-    use "theniceboy/nvim-deus"
-    use "logico/typewriter-vim"
-    use "sainnhe/everforest"
-    use "tiagovla/tokyodark.nvim"
-    use "aktersnurra/no-clown-fiesta.nvim"
-    use "mrjones2014/lighthaus.nvim"
+    use "rebelot/kanagawa.nvim"
+    --use { "rose-pine/neovim", as = "rose-pine" }
+    --use "folke/tokyonight.nvim"
+    --use "rmehri01/onenord.nvim"
+    --use "theniceboy/nvim-deus"
+    --use "tiagovla/tokyodark.nvim"
+    --use "mrjones2014/lighthaus.nvim"
 
     ----- Syntax Highlight ----
     use "OkelleyDevelopment/vim-solidity"
-    use {
-        "aklt/plantuml-syntax",
-        requires = {
-            "tyru/open-browser.vim",
-            "weirongxu/plantuml-previewer.vim",
-        },
-    }
+    use "aklt/plantuml-syntax"
 
     ----- Tools and Utilities -----
+
+    use { "davidgranstrom/nvim-markdown-preview" }
 
     -- Default Lua functions for other plugins
     use { "nvim-lua/plenary.nvim" }
     -- Autopair braces
     use { "windwp/nvim-autopairs" }
+
     -- Git integration
     use {
         "lewis6991/gitsigns.nvim",
@@ -137,6 +105,7 @@ return packer.startup(function(use)
             gitsigns.setup()
         end,
     }
+
     -- File browser
     use { "kyazdani42/nvim-web-devicons" }
     use {
@@ -158,7 +127,7 @@ return packer.startup(function(use)
     }
 
     -- Twilight Mode
-    use { "folke/twilight.nvim" }
+    --use { "folke/twilight.nvim" }
 
     -- Zen Mode
     use { "folke/zen-mode.nvim" }
@@ -190,25 +159,22 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
     }
-    -- Dang thing doesn't work half the time
-    --use "windwp/nvim-ts-autotag"
-    --
+
     --------- Language Server Plugins ---------
     --
     use { "neovim/nvim-lspconfig" } -- Collection of configurations for built-in LSP clientJkh
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
     use "tamago324/nlsp-settings.nvim" -- language server settings defined in json
 
-    -- Java
-    use "mfussenegger/nvim-jdtls"
-
     -- This is what will finish out the bootstrap
     if PACKER then
         require("packer").sync()
         print "------------------------------------------------"
-        print "Hello! \nHit enter and let the plugins install."
-        print "Then exit and reopen Neovim to apply the "
-        print "Odinvim configuations!"
+        print "  ___      _  _             _        "
+        print " / _ \\  __| |(_) _ _  __ __(_) _ __  "
+        print "| (_) |/ _` || || ' \\ \\ V /| || '  \\ "
+        print " \\___/ \\__/_||_||_||_| \\_/ |_||_|_|_|"
+        print "Installing configurations, please wait..."
         print "------------------------------------------------"
     end
 end)
