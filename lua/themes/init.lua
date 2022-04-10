@@ -5,5 +5,9 @@
 -----------------------------------------------------
 
 vim.opt.termguicolors = true
-vim.cmd "colorscheme kanagawa"
+vim.cmd [[try
+            colorscheme kanagawa
+          catch /.*/ 
+            colorscheme default
+          endtry]]
 --vim.cmd [[colorscheme tokyonight]]

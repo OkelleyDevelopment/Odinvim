@@ -11,6 +11,7 @@ end
 ---------------------------------------------------------------------
 -- Found this trick from Chris@Machine
 require("luasnip/loaders/from_vscode").lazy_load()
+--require("luasnip/loaders/from_vscode").load { paths = "/home/nikolai/.config/nvim/snippets" }
 
 local check_backspace = function()
     local col = vim.fn.col "." - 1
@@ -115,8 +116,8 @@ cmp.setup {
         end,
     },
     sources = {
-        { name = "nvim_lsp" },
         { name = "luasnip" },
+        { name = "nvim_lsp" },
         { name = "buffer" },
         { name = "path" },
     },
