@@ -1,0 +1,88 @@
+{
+  "Readme Basic": {
+    "prefix": "readme",
+    "body": [
+      "# ${1: Project Title}\n",
+      "Author(s): \n",
+      "Date: \n",
+      "## Motivation\n",
+      "Describe what the project does\n",
+      "## Project Execution\n",
+      "Describe any dependencies and how to run the project.\n",
+      "## Known Bugs\n",
+      "Let the reader know if anything is known to be broken.\n",
+      "## Acknowledgements\n",
+      "Link sources or give credit to those who may have helped\n"
+    ],
+    "description": "README template"
+  },
+  "Readme w/ Pictures": {
+    "prefix": "readme",
+    "body": [
+      "# ${1: Project Title}\n",
+      "Author(s): \n",
+      "Date: \n",
+      "## Motivation\n",
+      "Describe what the project does\n",
+      "## Project Execution\n",
+      "Describe any dependencies and how to run the project.\n",
+      "## Project Execution\n",
+      "Describe any dependencies and how to run the project.\n",
+      "## Known Bugs\n",
+      "Let the reader know if anything is known to be broken.\n",
+      "## Pictures\n\n",
+      "## Acknowledgements\n",
+      "Link sources or give credit to those who may have helped\n"
+    ],
+    "description": "README template with Picture"
+  },
+  "Readme Complete": {
+    "prefix": "readme",
+    "body": [
+      "# ${1: Project Title}\n",
+      "Author(s): \n",
+      "Date: \n",
+      "## Motivation\n",
+      "Describe what the project does\n",
+      "## Languages / Frameworks\n",
+      "Describe the language(s) and frameworks used in the project\n",
+      "## Project Execution\n",
+      "Describe any dependencies and how to run the project.\n",
+      "## Known Bugs\n",
+      "Let the reader know if anything is known to be broken.\n",
+      "## Future Goals / Project Reflection\n",
+      "Describe what could have gone better and what would be improved if the project continued\n",
+      "## Pictures\n",
+      "Include pictures of the project working so others can see!\n",
+      "## Acknowledgements\n",
+      "Link sources or give credit to those who may have helped\n"
+    ],
+    "description": "Complete Project README template"
+  },
+  "Metadata Front Matter": {
+    "prefix": "meta",
+    "body": [
+      "---",
+      "path: $1",
+      "title: $2",
+      "date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+      "excerpt: ",
+      "author: ",
+      "tags: []",
+      "---\n"
+    ],
+    "description": "Markdown metadata front matter"
+  },
+  "Note File": {
+    "prefix": "note",
+    "body": [
+      "---",
+      "title: ",
+      "date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+      "author: ",
+      "tags: []",
+      "---\n"
+    ],
+    "description": "Template for a quick note file"
+  }
+}
