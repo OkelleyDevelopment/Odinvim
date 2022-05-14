@@ -24,4 +24,3 @@ require "plugins.twilight"
 --
 -- Markdown previewer
 require "plugins.markdown_preview"
---

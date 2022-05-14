@@ -5,10 +5,15 @@
 -----------------------------------------------------
 --]]
 
+require("gemstones").setup{}
 vim.opt.termguicolors = true
+vim.cmd "colorscheme gemstones"
+
+--[[
 vim.cmd [[try
             colorscheme kanagawa
           catch /.*/ 
             colorscheme default
           endtry]]
 --vim.cmd [[colorscheme tokyonight]]
+--]]
