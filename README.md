@@ -7,7 +7,7 @@ Author: Nicholas O'Kelley
 ## Motivation
 
 Having built a configuration with VimScript prior ([Nvim-config](https://github.com/OkelleyDevelopment/Nvim-Config)),
-this refresh aims to harness the power of the built in LSP support that Neovim 0.5+ offers.
+this refresh aims to harness the power of the built in LSP support that Neovim 0.7 offers.
 
 This configuration is by no means perfect, but it was built by me over several months of work and learning.
 As good software should, this project will continue to have updates periodically as my workflow changes and
@@ -34,7 +34,7 @@ better solutions are found.
 
 ### Prerequisites
 
-Neovim (v0.6.0+)
+Neovim (v0.7.0)
 Install the following for my setup:
 
 - `clangd`

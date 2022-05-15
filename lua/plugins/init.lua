@@ -69,7 +69,8 @@ return packer.startup(function(use)
     use { "wbthomason/packer.nvim", opt = true }
 
     ----- Themes -----
-    use "rebelot/kanagawa.nvim"
+    use { "j4d3nw/gemstones.nvim" }
+    --use "rebelot/kanagawa.nvim"
     --use { "rose-pine/neovim", as = "rose-pine" }
     --use "folke/tokyonight.nvim"
     --use "rmehri01/onenord.nvim"
@@ -103,6 +104,18 @@ return packer.startup(function(use)
                 return
             end
             gitsigns.setup()
+        end,
+    }
+
+    use { -- Rust Tools
+        "simrat39/rust-tools.nvim",
+    }
+    use {
+        "saecki/crates.nvim",
+        tag = "v0.2.1",
+        requires = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("crates").setup()
         end,
     }
 
