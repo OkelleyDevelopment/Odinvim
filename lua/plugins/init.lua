@@ -106,6 +106,7 @@ return packer.startup(function(use)
             gitsigns.setup()
         end,
     }
+    use { "rcarriga/nvim-notify" }
 
     use { -- Rust Tools
         "simrat39/rust-tools.nvim",
