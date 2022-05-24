@@ -8,6 +8,10 @@
       {
         "language": "markdown",
         "path": "./markdown.json"
+      },
+      {
+        "language": "all",
+        "path": "./global.json"
       }
     ]
   }
