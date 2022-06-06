@@ -5,9 +5,13 @@
 -----------------------------------------------------
 --]]
 
-require("gemstones").setup{}
+require("gemstones").setup {}
 vim.opt.termguicolors = true
 vim.cmd "colorscheme gemstones"
+--vim.cmd [[
+--highlight Normal ctermbg=none guibg=none
+--highlight NonText ctermbg=none guibg=none
+--]]
 
 --[[
 vim.cmd [[try

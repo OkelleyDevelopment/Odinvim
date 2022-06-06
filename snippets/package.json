@@ -12,6 +12,10 @@
       {
         "language": "all",
         "path": "./global.json"
+      },
+      {
+        "language": "json",
+        "path": "./json.json"
       }
     ]
   }
