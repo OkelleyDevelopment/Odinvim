@@ -9,20 +9,25 @@
 set -o nounset  # error when ref undefined vars
 set -o errexit # exit on command failure
 
-CYAN="$(printf '\033[36m')"
+CYAN="$(printf '\033[1;36m')"; # Technically bold
+YELLOW="$(printf '\033[33m')";
+GREEN="$(printf '\033[32m')";
+WHITE="$(printf '\033[37m')";
 
 backup_nvim() {
-    echo ${CYAN} "Moving the old config to ~/.config/nvim.bak"
+    echo -e ${YELLOW}"Moving the old config to ~/.config/nvim.bak" ${GREEN};
     mv ~/.config/nvim/ ~/.config/nvim.bak/
+    echo ${WHITE} "Done."
 }
 
 installpacker() {
-    echo ${CYAN} "Cloning Packer"
+    echo -e ${YELLOW}"Installing the packer plugin manager ..."  ${GREEN};
     git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/opt/packer.nvim
+    echo ${WHITE} "Done."
 }
 
 summonOdinvim() {
-    echo ${CYAN} "Cloning Odinvim"
+    echo ${YELLOW}"Cloning the project, please wait ..."  ${GREEN};
     git clone --branch experimental https://github.com/OkelleyDevelopment/Odinvim.git ~/.config/nvim
     cd "$HOME"/.config/nvim/
     nvim --headless \
@@ -32,12 +37,20 @@ summonOdinvim() {
     nvim --headless \
         +'autocmd User PackerComplete sleep 100m | qall' \
         +PackerSync 
-    echo -e ${CYAN}"\nCompile Completed"
+    echo -e ${WHITE} "Done."
 }
 
 
 clear
-echo ${CYAN} "Installing Odinvim has begun..."
+
+echo ${WHITE}"---------------------------------------"
+echo ${CYAN}"  ___      _  _             _        "
+echo ${CYAN}" / _ \\  __| |(_) _ _  __ __(_) _ __  "
+echo ${CYAN}"| (_) |/ _\` || || ' \\ \\ V /| || '  \\ "
+echo ${CYAN}" \\___/ \\__/_||_||_||_| \\_/ |_||_|_|_|"
+echo ${WHITE}"---------------------------------------"
+
+#echo "Installing Odinvim has begun..."
 
 [ -d "$HOME/.config/nvim/" ] && backup_nvim
 
@@ -50,4 +63,4 @@ fi
 
 summonOdinvim
 
-echo ${CYAN}"Installation is complete."
+echo ${YELLOW}"Installation is complete."
