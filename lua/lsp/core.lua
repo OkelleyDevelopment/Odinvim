@@ -11,15 +11,9 @@
 
 local M = {}
 
---local notify_status_ok, notify = pcall(require, "notify")
---if not notify_status_ok then
---   return
---end
-
 local ok, signs = pcall(require, "lsp.signs")
 if not ok then
-    --print "Signs not found"
-    vim.notify "Signs not found"
+    print "Signs not found"
     return
 end
 
@@ -126,13 +120,11 @@ end
 --------------------------------------------
 
 M.on_attach = function(client, bufnr)
-    --vim.notify(client.name .. " starting...")
     if client.name == "tsserver" then
         client.resolved_capabilities.document_formatting = false
     end
     lsp_keymaps(bufnr)
     lsp_highlight_document(client)
-    --vim.notify(client.name .. " ready.")
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
