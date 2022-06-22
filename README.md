@@ -98,7 +98,6 @@ Can be found here `./lua/plugins/plugs.lua`
 - `lir.nvim` - Simple file explorer for easier file navigation around projects
 - `gitsigns` - git gutter indicators and hunk management
 - `nvim-telescope/telescope.nvim` - Project fuzzy finder
-- `folke/zen-mode.nvim` - Distraction free mode (Minor Adjustments to be made)
 
 ### LSP and Code Completion
 

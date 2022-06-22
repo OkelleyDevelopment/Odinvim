@@ -135,10 +135,11 @@ return packer.startup(function(use)
     }
 
     -- Treesitter
-    use {
-        "nvim-treesitter/nvim-treesitter",
-        --run = ":TSUpdate",
-    }
+    -- TODO: Figure out how to allow this plugin to exist in the initial install
+    -- use {
+    --  "nvim-treesitter/nvim-treesitter",
+    --run = ":TSUpdate",
+    --}
 
     --------- Language Server Plugins ---------
     --

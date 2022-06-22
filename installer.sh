@@ -1,41 +1,42 @@
 #!/bin/bash
+#
+# Install script to load the Okelldev nvim config (Odinvim)
+# 
+# Author: Nicholas O'Kelley
+# Date: 06/22/2022
+# 
 
 set -o nounset  # error when ref undefined vars
 set -o errexit # exit on command failure
 
-GREEN="$(printf '\033[32m')"
 CYAN="$(printf '\033[36m')"
 
-clear
-echo "Odinvim"
-
 backup_nvim() {
-    echo ${GREEN} "Moving the old config to ~/.config/nvim.bak"
+    echo ${CYAN} "Moving the old config to ~/.config/nvim.bak"
     mv ~/.config/nvim/ ~/.config/nvim.bak/
 }
 
 installpacker() {
-    echo ${GREEN} "Cloning Packer"
+    echo ${CYAN} "Cloning Packer"
     git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/opt/packer.nvim
 }
 
 summonOdinvim() {
-    echo ${GREEN} "Cloning Odinvim"
+    echo ${CYAN} "Cloning Odinvim"
     git clone --branch experimental https://github.com/OkelleyDevelopment/Odinvim.git ~/.config/nvim
     cd "$HOME"/.config/nvim/
-    #nvim +PackerSync 
-    #nvim +PackerCompile
-   nvim --headless \
+    nvim --headless \
         +'autocmd User PackerComplete sleep 100m | qall' \
         +PackerInstall
 
     nvim --headless \
         +'autocmd User PackerComplete sleep 100m | qall' \
         +PackerSync 
-    echo ${CYAN}"\nCompile Completed"
+    echo -e ${CYAN}"\nCompile Completed"
 }
 
-# Welcome  
+
+clear
 echo ${CYAN} "Installing Odinvim has begun..."
 
 [ -d "$HOME/.config/nvim/" ] && backup_nvim
@@ -49,5 +50,4 @@ fi
 
 summonOdinvim
 
-echo ${GREEN}"Installation is complete."
-
+echo ${CYAN}"Installation is complete."
