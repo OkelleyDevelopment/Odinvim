@@ -148,7 +148,11 @@ return packer.startup(function(use)
         tag = "v0.2.1",
         requires = { "nvim-lua/plenary.nvim" },
         config = function()
-            require("crates").setup()
+            local ok, crates = pcall(require, "crates.nvim")
+            if not ok then
+                return
+            end
+            crates.setup()
         end,
     }
     use { "neovim/nvim-lspconfig" } -- Collection of configurations for built-in LSP clientJkh
