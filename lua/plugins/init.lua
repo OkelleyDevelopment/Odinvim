@@ -115,7 +115,7 @@ return packer.startup(function(use)
     --------- Snippets Support ---------
     --
     use { "L3MON4D3/LuaSnip" } -- the snippets engine
-    --use "rafamadriz/friendly-snippets" -- snippets we can use
+    -- use "rafamadriz/friendly-snippets" -- snippets we can use
     use { "OkelleyDevelopment/friendly-snippets" } -- Forked my own version
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
     --
@@ -130,7 +130,6 @@ return packer.startup(function(use)
             { "hrsh7th/cmp-nvim-lsp" },
             { "hrsh7th/cmp-path" },
             { "saadparwaiz1/cmp_luasnip" }, -- luasnip completion source for nvim-cmp
-            { "hrsh7th/cmp-calc" },
         },
     }
 
@@ -144,18 +143,6 @@ return packer.startup(function(use)
     --------- Language Server Plugins ---------
     --
     use { "simrat39/rust-tools.nvim" }
-    use {
-        "saecki/crates.nvim",
-        tag = "v0.2.1",
-        requires = { "nvim-lua/plenary.nvim" },
-        config = function()
-            local ok, crates = pcall(require, "crates.nvim")
-            if not ok then
-                return
-            end
-            crates.setup()
-        end,
-    }
     use { "neovim/nvim-lspconfig" } -- Collection of configurations for built-in LSP clientJkh
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
     use "tamago324/nlsp-settings.nvim" -- language server settings defined in json

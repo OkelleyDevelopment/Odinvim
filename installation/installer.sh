@@ -63,4 +63,4 @@ fi
 
 summonOdinvim
 
-echo ${YELLOW}"Installation is complete."
+echo ${GREEN}"Installation is complete."
