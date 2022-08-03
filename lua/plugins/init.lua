@@ -113,7 +113,7 @@ return packer.startup(function(use)
     --
     use { "L3MON4D3/LuaSnip" } -- the snippets engine
     -- use "rafamadriz/friendly-snippets" -- Upstream project I maintain
-    use { "OkelleyDevelopment/friendly-snippets" -- Forked my own version
+    use { "OkelleyDevelopment/friendly-snippets" } -- Forked my own version
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
     --
     --------- Code Completion ---------
