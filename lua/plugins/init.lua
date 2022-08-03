@@ -61,10 +61,7 @@ return packer.startup(function(use)
     use { "wbthomason/packer.nvim", opt = true }
 
     ----- Themes -----
-    use { "j4d3nw/gemstones.nvim" }
-    --use "rebelot/kanagawa.nvim"
-    --use "theniceboy/nvim-deus"
-    --use "tiagovla/tokyodark.nvim"
+    use "rebelot/kanagawa.nvim"
 
     ----- Syntax Highlight ----
     use "OkelleyDevelopment/vim-solidity"
@@ -115,8 +112,8 @@ return packer.startup(function(use)
     --------- Snippets Support ---------
     --
     use { "L3MON4D3/LuaSnip" } -- the snippets engine
-    -- use "rafamadriz/friendly-snippets" -- snippets we can use
-    use { "OkelleyDevelopment/friendly-snippets", branch = "debug-es7-snippets" } -- Forked my own version
+    -- use "rafamadriz/friendly-snippets" -- Upstream project I maintain
+    use { "OkelleyDevelopment/friendly-snippets" -- Forked my own version
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
     --
     --------- Code Completion ---------
