@@ -25,7 +25,6 @@ better solutions are found.
   - [x] friendly-snippets has some good stuff here too
 - [x] Telescope
 - [x] Format on save utilizing `null-ls`
-- [x] Zen mode
 - [ ] Nerd Fonts
 
 ## Installation
@@ -99,7 +98,6 @@ Can be found here `./lua/plugins/plugs.lua`
 - `lir.nvim` - Simple file explorer for easier file navigation around projects
 - `gitsigns` - git gutter indicators and hunk management
 - `nvim-telescope/telescope.nvim` - Project fuzzy finder
-- `folke/zen-mode.nvim` - Distraction free mode (Minor Adjustments to be made)
 
 ### LSP and Code Completion
 
@@ -123,12 +121,8 @@ Can be found here `./lua/plugins/plugs.lua`
 
 - Themes - Themes found around that I felt were neat, more can be added :)
   - Kanagawa (Currently set)
-  - Nord
-  - Onenord
   - Tokyonight
-  - Rose-pine
   - nvim-deus
-  - tokyodark.nvim
 
 ## Extra Pictures
 

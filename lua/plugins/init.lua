@@ -2,7 +2,7 @@
 -- Plugin Requires, install, packer setup, and more!
 --
 -- Author: Nicholas O'Kelley
--- Updated: April 9, 2022
+-- Updated: 06/21/2022
 --]]
 --
 ------------------- Automatically Install Packer.nvim -------------------------
@@ -19,8 +19,6 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
         "https://github.com/wbthomason/packer.nvim",
         install_path,
     }
-    --print "Packer installing"
-    --vim.cmd [[packadd packer.nvim]]
 end
 
 vim.cmd [[packadd packer.nvim]]
@@ -32,7 +30,7 @@ vim.cmd "autocmd BufWritePost init.lua PackerCompile"
 
 local ok, packer = pcall(require, "packer")
 if not ok then
-    --print "Packer missing, check lua/plugins/init.lua"
+    print "Packer missing, check lua/plugins/init.lua"
     return
 end
 
@@ -49,12 +47,6 @@ packer.init {
     },
 }
 
-------------------- Require Plugins -------------------------
---
---require "plugins.plugins"
-------------------- End Require Plugins -------------------------
---
---
 ------------------ Packer Configs --------------------
 
 local ok, packer = pcall(require, "packer")
@@ -69,14 +61,7 @@ return packer.startup(function(use)
     use { "wbthomason/packer.nvim", opt = true }
 
     ----- Themes -----
-    use { "j4d3nw/gemstones.nvim" }
-    --use "rebelot/kanagawa.nvim"
-    --use { "rose-pine/neovim", as = "rose-pine" }
-    --use "folke/tokyonight.nvim"
-    --use "rmehri01/onenord.nvim"
-    --use "theniceboy/nvim-deus"
-    --use "tiagovla/tokyodark.nvim"
-    --use "mrjones2014/lighthaus.nvim"
+    use "rebelot/kanagawa.nvim"
 
     ----- Syntax Highlight ----
     use "OkelleyDevelopment/vim-solidity"
@@ -85,10 +70,7 @@ return packer.startup(function(use)
     ----- Tools and Utilities -----
 
     use { "davidgranstrom/nvim-markdown-preview" }
-
-    -- Default Lua functions for other plugins
     use { "nvim-lua/plenary.nvim" }
-    -- Autopair braces
     use { "windwp/nvim-autopairs" }
 
     -- Git integration
@@ -104,18 +86,6 @@ return packer.startup(function(use)
                 return
             end
             gitsigns.setup()
-        end,
-    }
-
-    use { -- Rust Tools
-        "simrat39/rust-tools.nvim",
-    }
-    use {
-        "saecki/crates.nvim",
-        tag = "v0.2.1",
-        requires = { "nvim-lua/plenary.nvim" },
-        config = function()
-            require("crates").setup()
         end,
     }
 
@@ -139,17 +109,11 @@ return packer.startup(function(use)
         requires = "nvim-lua/plenary.nvim",
     }
 
-    -- Twilight Mode
-    --use { "folke/twilight.nvim" }
-
-    -- Zen Mode
-    use { "folke/zen-mode.nvim" }
-    --
     --------- Snippets Support ---------
     --
     use { "L3MON4D3/LuaSnip" } -- the snippets engine
-    --use "rafamadriz/friendly-snippets" -- snippets we can use
-    use "OkelleyDevelopment/friendly-snippets" -- Forked my own version
+    -- use "rafamadriz/friendly-snippets" -- Upstream project I maintain
+    use { "OkelleyDevelopment/friendly-snippets" } -- Forked my own version
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
     --
     --------- Code Completion ---------
@@ -163,18 +127,28 @@ return packer.startup(function(use)
             { "hrsh7th/cmp-nvim-lsp" },
             { "hrsh7th/cmp-path" },
             { "saadparwaiz1/cmp_luasnip" }, -- luasnip completion source for nvim-cmp
-            { "hrsh7th/cmp-calc" },
         },
     }
 
     -- Treesitter
+    -- TODO: Figure out how to allow this plugin to exist in the initial install
+    -- use {
+    --  "nvim-treesitter/nvim-treesitter",
+    --run = ":TSUpdate",
+    --}
+
     use {
-        "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
+        "saecki/crates.nvim",
+        tag = "v0.2.1",
+        requires = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("crates").setup()
+        end,
     }
 
     --------- Language Server Plugins ---------
     --
+    use { "simrat39/rust-tools.nvim" }
     use { "neovim/nvim-lspconfig" } -- Collection of configurations for built-in LSP clientJkh
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
     use "tamago324/nlsp-settings.nvim" -- language server settings defined in json

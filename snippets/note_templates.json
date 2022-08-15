@@ -1,0 +1,44 @@
+{
+  "Note File": {
+    "prefix": "note",
+    "body": [
+      "---",
+      "Title: $TM_FILENAME_BASE",
+      "Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+      "Author: $1",
+      "---",
+      "\n**Tags**: $0"
+    ],
+    "description": "Template for a quick note file"
+  },
+  "Cornell Notes": {
+    "prefix": "cnote",
+    "body": [
+      "---",
+      "Title: $TM_FILENAME_BASE",
+      "Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+      "Course: $1",
+      "Class: $2",
+      "---",
+      "\n## Questions/Cues",
+      "\n## Notes",
+      "\n## Summary"
+    ],
+    "description": "Cornell Notes"
+  },
+  "Book Notes": {
+    "prefix": "bnote",
+    "body": [
+      "---",
+      "Title: $0",
+      "Date Finished: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+      "---",
+      "\n**Tags**: $0",
+      "\n## Book in 3 Sentences",
+      "\n## Impressions",
+      "\n## Top Quotes",
+      "\n## Summary / Notes"
+    ],
+    "description": "Book notes template"
+  }
+}

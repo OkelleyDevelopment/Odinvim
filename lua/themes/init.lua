@@ -1,19 +1,18 @@
 -- [[
--- Selected Themes for Odinvim that I thought were nice
+-- Selected Themes for Odinvim
 --
 -- Author: Nicholas O'Kelley
 -----------------------------------------------------
 --]]
 
-require("gemstones").setup{}
-vim.opt.termguicolors = true
-vim.cmd "colorscheme gemstones"
+--local ok, gem = pcall(require, "gemstones")
+local ok, kana = pcall(require, "kanagawa")
 
---[[
-vim.cmd [[try
-            colorscheme kanagawa
-          catch /.*/ 
-            colorscheme default
-          endtry]]
---vim.cmd [[colorscheme tokyonight]]
---]]
+if not ok then
+    return
+end
+
+--gem.setup()
+vim.opt.termguicolors = true
+--vim.cmd "colorscheme gemstones"
+vim.cmd "colorscheme kanagawa"

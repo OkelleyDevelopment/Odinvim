@@ -1,0 +1,12 @@
+{
+  "friendly-snippet template": {
+    "prefix": "snip",
+    "body": [
+      "\"${1:name of snippet}\": {\n",
+      "\"prefix\": \"${2: snippet prefix}\",",
+      "\"body\": [],",
+      "\"description\" : \"\"\n}"
+    ],
+    "description": "A snippet to make adding new snippets, friendlier"
+  }
+}
