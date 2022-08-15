@@ -1,3 +1,11 @@
+--[[
+-- The nvim-cmp configuration file
+--
+-- Author: Nicholas O'Kelley
+-- 
+-- Credit for portions of this file are denoted in the inline comments below
+--]]
+
 local cmp_status, cmp = pcall(require, "cmp")
 if not cmp_status then
     return
@@ -9,14 +17,17 @@ if not snip_stat then
 end
 
 ---------------------------------------------------------------------
--- Found this trick from Chris@Machine
+-- Found this trick from Chris@Machine on his discord
+-- this selects the loader to read the json of our snippets
+-- in this case, friendly-snippets
 require("luasnip/loaders/from_vscode").lazy_load()
+require("luasnip").filetype_extend("javascript", { "javascriptreact" })
+
+-- Extend javascript to load the react snippets too
 require("luasnip").filetype_extend("javascript", { "javascriptreact" })
 
 -- Added this for my custom snippets (April 9, 2022)
 require("luasnip/loaders/from_vscode").load { paths = "/home/nikolai/.config/nvim/snippets" }
-
---require("luasnip").filetype_extend("javascript", { "javascriptreact" })
 
 local check_backspace = function()
     local col = vim.fn.col "." - 1
@@ -55,7 +66,6 @@ local kind_icons = {
     TypeParameter = "",
 }
 
--- Redoing this for the 12 millionth time
 cmp.setup {
     snippet = {
         expand = function(args)
@@ -105,12 +115,13 @@ cmp.setup {
         }),
     },
     -- Found this trick from chris@machines' youtube video
+    -- on setting up cmp
+    -- https://www.youtube.com/watch?v=6F3ONwrCxMg&t=831s
     formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
             -- Kind icons
             vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-            -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
             vim_item.menu = ({
                 nvim_lsp = "[LSP]",
                 luasnip = "[SNIP]",
