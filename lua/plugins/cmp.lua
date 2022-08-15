@@ -16,6 +16,8 @@ require("luasnip").filetype_extend("javascript", { "javascriptreact" })
 -- Added this for my custom snippets (April 9, 2022)
 require("luasnip/loaders/from_vscode").load { paths = "/home/nikolai/.config/nvim/snippets" }
 
+--require("luasnip").filetype_extend("javascript", { "javascriptreact" })
+
 local check_backspace = function()
     local col = vim.fn.col "." - 1
     return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"

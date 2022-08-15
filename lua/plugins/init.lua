@@ -62,7 +62,7 @@ return packer.startup(function(use)
 
     ----- Themes -----
     use "rebelot/kanagawa.nvim"
-
+    
     ----- Syntax Highlight ----
     use "OkelleyDevelopment/vim-solidity"
     use "aklt/plantuml-syntax"
@@ -86,6 +86,18 @@ return packer.startup(function(use)
                 return
             end
             gitsigns.setup()
+        end,
+    }
+
+    use { -- Rust Tools
+        "simrat39/rust-tools.nvim",
+    }
+    use {
+        "saecki/crates.nvim",
+        tag = "v0.2.1",
+        requires = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("crates").setup()
         end,
     }
 

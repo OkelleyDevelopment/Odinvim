@@ -6,7 +6,7 @@
 --]]
 
 --local ok, gem = pcall(require, "gemstones")
-local ok, kang = pcall(require, "kanagawa")
+local ok, kana = pcall(require, "kanagawa")
 
 if not ok then
     return
