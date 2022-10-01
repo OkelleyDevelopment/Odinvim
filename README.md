@@ -120,8 +120,8 @@ Can be found here `./lua/plugins/plugs.lua`
 ### Appearance
 
 - Themes - Themes found around that I felt were neat, more can be added :)
-  - Kanagawa (Currently set)
-  - Tokyonight
+  - ayu-dark (Currently set)
+  - Kanagawa
   - nvim-deus
 
 ## Extra Pictures

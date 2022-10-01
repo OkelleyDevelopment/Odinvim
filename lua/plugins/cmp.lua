@@ -22,9 +22,10 @@ end
 -- in this case, friendly-snippets
 require("luasnip/loaders/from_vscode").lazy_load()
 require("luasnip").filetype_extend("javascript", { "javascriptreact" })
+require("luasnip").filetype_extend("javascriptreact", { "html" })
 
 -- Extend javascript to load the react snippets too
-require("luasnip").filetype_extend("javascript", { "javascriptreact" })
+require("luasnip").filetype_extend("typescript", { "javascript" })
 
 -- Added this for my custom snippets (April 9, 2022)
 require("luasnip/loaders/from_vscode").load { paths = "/home/nikolai/.config/nvim/snippets" }
