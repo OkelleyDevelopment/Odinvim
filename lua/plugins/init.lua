@@ -61,8 +61,8 @@ return packer.startup(function(use)
     use { "wbthomason/packer.nvim", opt = true }
 
     ----- Themes -----
-    -- use "rebelot/kanagawa.nvim"
-    use "Shatur/neovim-ayu"
+    use "rebelot/kanagawa.nvim"
+    --use "Shatur/neovim-ayu"
 
     ----- Syntax Highlight ----
     use "OkelleyDevelopment/vim-solidity"
@@ -114,8 +114,8 @@ return packer.startup(function(use)
     --
     use { "L3MON4D3/LuaSnip" } -- the snippets engine
     -- use "rafamadriz/friendly-snippets" -- Upstream project I maintain
-    use { "OkelleyDevelopment/friendly-snippets", branch = "dockerfile" } -- Forked my own version
-    use "saadparwaiz1/cmp_luasnip" -- snippet completions
+    use { "OkelleyDevelopment/friendly-snippets" } -- Forked my own version
+    use {"OkelleyDevelopment/cmp_luasnip", branch = "feat(autosnippets)" } -- snippet completions
     --
     --------- Code Completion ---------
     --
@@ -130,14 +130,6 @@ return packer.startup(function(use)
             { "saadparwaiz1/cmp_luasnip" }, -- luasnip completion source for nvim-cmp
         },
     }
-
-    -- Treesitter
-    -- TODO: Figure out how to allow this plugin to exist in the initial install
-    use {
-        "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
-    }
-
     use {
         "saecki/crates.nvim",
         tag = "v0.2.1",

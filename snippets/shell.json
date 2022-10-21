@@ -1,0 +1,11 @@
+{
+  "function": {
+    "prefix": "function",
+    "body": "${1:some_name} ()\n{\n\t${0}\n}",
+    "description": ["Something something\n"],
+    "luasnip": {
+      "priority": 2000,
+      "autotrigger": true
+    }
+  }
+}
