@@ -59,20 +59,13 @@ end
 return packer.startup(function(use)
     -- Packer to maintain itself
     use { "wbthomason/packer.nvim", opt = true }
-
-    ----- Themes -----
-    use "rebelot/kanagawa.nvim"
-    --use "Shatur/neovim-ayu"
-
+    
     ----- Syntax Highlight ----
-    use "OkelleyDevelopment/vim-solidity"
-    use "aklt/plantuml-syntax"
+    --use "OkelleyDevelopment/vim-solidity"
+    --use "aklt/plantuml-syntax"
 
     ----- Tools and Utilities -----
-
-    use { "davidgranstrom/nvim-markdown-preview" }
     use { "nvim-lua/plenary.nvim" }
-    use { "windwp/nvim-autopairs" }
 
     -- Git integration
     use {
@@ -91,7 +84,6 @@ return packer.startup(function(use)
     }
 
     -- File browser
-    use { "kyazdani42/nvim-web-devicons" }
     use {
         "tamago324/lir.nvim",
         requires = {
@@ -104,18 +96,11 @@ return packer.startup(function(use)
         requires = { { "nvim-lua/plenary.nvim" } },
     }
 
-    -- Todo comment highlighter
-    use {
-        "folke/todo-comments.nvim",
-        requires = "nvim-lua/plenary.nvim",
-    }
-
     --------- Snippets Support ---------
     --
     use { "L3MON4D3/LuaSnip" } -- the snippets engine
-    -- use "rafamadriz/friendly-snippets" -- Upstream project I maintain
-    use { "OkelleyDevelopment/friendly-snippets" } -- Forked my own version
-    use {"OkelleyDevelopment/cmp_luasnip", branch = "feat(autosnippets)" } -- snippet completions
+    use { "OkelleyDevelopment/friendly-snippets" } 
+    use { "saadparwaiz1/cmp_luasnip" } -- snippet completions
     --
     --------- Code Completion ---------
     --
@@ -130,22 +115,6 @@ return packer.startup(function(use)
             { "saadparwaiz1/cmp_luasnip" }, -- luasnip completion source for nvim-cmp
         },
     }
-    use {
-        "saecki/crates.nvim",
-        tag = "v0.2.1",
-        requires = { "nvim-lua/plenary.nvim" },
-        config = function()
-            require("crates").setup()
-        end,
-    }
-
-    --------- Language Server Plugins ---------
-    --
-    use { "simrat39/rust-tools.nvim" }
-    use { "neovim/nvim-lspconfig" } -- Collection of configurations for built-in LSP clientJkh
-    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-    use "tamago324/nlsp-settings.nvim" -- language server settings defined in json
-
     -- This is what will finish out the bootstrap
     if PACKER then
         require("packer").sync()

@@ -13,14 +13,11 @@
 -- General Configs
 require "core"
 
--- Plugin Config
-require "plugins"
-
--- Language Server Support
-require "lsp"
-
 -- Config Themes
 require "themes"
+
+-- Plugin Config
+require "plugins"
 
 -- Setup Plugin Configs post install
 require "plugins.configs"

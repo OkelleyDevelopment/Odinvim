@@ -1,10 +1,9 @@
 --[[
 -- Signs for LSP
 --
--- Can be configured in the text = "" portion, I opted to not have anything for now
+-- Can be configured in the text = "" portion
 --
 -- Author: Nicholas O'Kelley
--- Updated: Jan 3, 2022
 --]]
 
 local signs = {
