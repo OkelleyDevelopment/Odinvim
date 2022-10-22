@@ -5,11 +5,13 @@ require "plugins.cmp"
 require "plugins.lir"
 --
 -- Autopair ({"[]"})
-require "plugins.autopairs"
+--require "plugins.autopairs"
 --
 -- Telescope
 require "plugins.telescope"
 --
 -- Null ls
-require "plugins.null_ls"
+-- require "plugins.null_ls"
 --
+-- Gitsigns 
+require "plugins.signed"

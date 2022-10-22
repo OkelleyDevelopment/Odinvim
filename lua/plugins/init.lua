@@ -49,62 +49,36 @@ packer.init {
 
 ------------------ Packer Configs --------------------
 
-local ok, packer = pcall(require, "packer")
-
-if not ok then
-    return
-end
-
 -- This makes the linter not scream at me
 return packer.startup(function(use)
     -- Packer to maintain itself
     use { "wbthomason/packer.nvim", opt = true }
     
-    ----- Syntax Highlight ----
-    --use "OkelleyDevelopment/vim-solidity"
-    --use "aklt/plantuml-syntax"
+    ----- Additional Syntax Highlight -----
+    -- use "OkelleyDevelopment/vim-solidity"
+    -- use "aklt/plantuml-syntax"
+
+    -----    Themes    -----
+    use { "pwntester/nautilus.nvim" }
 
     ----- Tools and Utilities -----
-    use { "nvim-lua/plenary.nvim" }
-
-    -- Git integration
+    use { "nvim-lua/plenary.nvim" } -- functions plugins utilize
+    use { "nvim-telescope/telescope.nvim" }     -- Project Fuzzy Finder 
     use {
-        "lewis6991/gitsigns.nvim",
+        "lewis6991/gitsigns.nvim",     -- Git integration
         requires = {
             "nvim-lua/plenary.nvim",
-        },
-        config = function()
-            --require("gitsigns").setup()
-            local okay, gitsigns = pcall(require, "gitsigns")
-            if not okay then
-                return
-            end
-            gitsigns.setup()
-        end,
+        }
     }
-
-    -- File browser
     use {
         "tamago324/lir.nvim",
         requires = {
             { "tamago324/lir-git-status.nvim" },
+            { "kyazdani42/nvim-web-devicons" },
         },
     }
-    -- Project Fuzzy Finder
-    use {
-        "nvim-telescope/telescope.nvim",
-        requires = { { "nvim-lua/plenary.nvim" } },
-    }
 
-    --------- Snippets Support ---------
-    --
-    use { "L3MON4D3/LuaSnip" } -- the snippets engine
-    use { "OkelleyDevelopment/friendly-snippets" } 
-    use { "saadparwaiz1/cmp_luasnip" } -- snippet completions
-    --
     --------- Code Completion ---------
-    --
-    use "jose-elias-alvarez/null-ls.nvim" -- formatters and linters
     use {
         "hrsh7th/nvim-cmp",
         requires = {
@@ -115,6 +89,11 @@ return packer.startup(function(use)
             { "saadparwaiz1/cmp_luasnip" }, -- luasnip completion source for nvim-cmp
         },
     }
+    
+    --------- Snippets Support ---------
+    use { "L3MON4D3/LuaSnip" } -- the snippets engine
+    use { "OkelleyDevelopment/friendly-snippets" } -- a fork of the original
+
     -- This is what will finish out the bootstrap
     if PACKER then
         require("packer").sync()
