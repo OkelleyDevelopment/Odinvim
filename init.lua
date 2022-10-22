@@ -16,6 +16,9 @@ require "core"
 -- Config Themes
 require "themes"
 
+-- LSP settings (Mason, lspconfig)
+require "lsp"
+
 -- Plugin Config
 require "plugins"
 

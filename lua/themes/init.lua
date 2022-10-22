@@ -18,5 +18,5 @@ if not ok then
 end
 
 naut.load({ 
-    transparent = true,
+    --transparent = true,
 })
