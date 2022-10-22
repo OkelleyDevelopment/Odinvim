@@ -15,3 +15,5 @@ require "plugins.telescope"
 --
 -- Gitsigns 
 require "plugins.signed"
+
+require "plugins.mason"

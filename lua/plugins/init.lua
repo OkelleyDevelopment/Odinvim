@@ -64,12 +64,7 @@ return packer.startup(function(use)
     ----- Tools and Utilities -----
     use { "nvim-lua/plenary.nvim" } -- functions plugins utilize
     use { "nvim-telescope/telescope.nvim" }     -- Project Fuzzy Finder 
-    use {
-        "lewis6991/gitsigns.nvim",     -- Git integration
-        requires = {
-            "nvim-lua/plenary.nvim",
-        }
-    }
+    use { "lewis6991/gitsigns.nvim" } -- Git integration
     use {
         "tamago324/lir.nvim",
         requires = {
@@ -77,6 +72,11 @@ return packer.startup(function(use)
             { "kyazdani42/nvim-web-devicons" },
         },
     }
+
+    --------- LSP Related ---------
+    use { "williamboman/mason.nvim" }
+    use { "williamboman/mason-lspconfig.nvim" }
+    use { "neovim/nvim-lspconfig" } -- Collection of configurations for built-in LSP client
 
     --------- Code Completion ---------
     use {
