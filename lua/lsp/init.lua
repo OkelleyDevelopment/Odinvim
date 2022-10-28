@@ -29,3 +29,10 @@ lspconfig["tsserver"].setup({
     on_attach = core.on_attach,
     capabilities = core.capabilities,
 })
+
+[[--
+lspconfig["sumneko_lua"].setup({
+    on_attach = core.on_attach,
+    capabilities = core.capabilities,
+})
+--]]
