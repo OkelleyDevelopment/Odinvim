@@ -20,6 +20,7 @@ friction to the workflow inside Neovim.
   - `ripgrep (rg)`
 
 - `pip install pynvim`
+- xClip : used to share clipboard with system and vim
 
 ### Installing the Configuration
 
