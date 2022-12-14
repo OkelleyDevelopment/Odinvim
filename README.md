@@ -2,8 +2,6 @@
 
 Author: Nicholas O'Kelley
 
-<img src="./assets/odinvim.png"  width="650" height="400" />
-
 ## Motivation
 
 Maintain a slim configuration to aid development without introducing more 
@@ -13,8 +11,8 @@ friction to the workflow inside Neovim.
 
 ### Prerequisites
 
-- Neovim release v0.8
-  - Note: I build from source.
+- Neovim release v0.9
+  - Note: I build from source and install with a DEB package.
 
 - If you wish to utilize the `live_grep` (`<leader>g`) portion of the [Telescope plugin](https://github.com/nvim-telescope/telescope.nvim)
   - `ripgrep (rg)`
@@ -55,16 +53,6 @@ utils.map(mode, mapping, command, opts)
 The basic modes include {'n': normal, 'i': insert, 'v': visual}. The `mapping` is the
 keys you will press to get the action, and `command` is the command that would execute once
 the mapping is made.
-
-## Extra Pictures
-
-### Demo of `lir.nvim`
-
-<img src="./assets/lir_demo.png"  width="650" height="400" />
-
-### Demo of `nvim-telescope`
-
-<img src="./assets/telescope_demo.png"  width="650" height="400" />
 
 ## Why Odinvim?
 
