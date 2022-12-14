@@ -93,6 +93,7 @@ return packer.startup(function(use)
     --------- Snippets Support ---------
     use { "L3MON4D3/LuaSnip" } -- the snippets engine
     use { "OkelleyDevelopment/friendly-snippets" } -- a fork of the original
+    -- use { "rafamadriz/friendly-snippets" }
 
     -- This is what will finish out the bootstrap
     if PACKER then
