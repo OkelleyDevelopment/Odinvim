@@ -13,14 +13,13 @@
 -- General Configs
 require "core"
 
--- Config Themes
-require "themes"
-
--- LSP settings (Mason, lspconfig)
-require "lsp"
+require "utils"
 
 -- Plugin Config
 require "plugins"
 
--- Setup Plugin Configs post install
-require "plugins.configs"
+-- Config snippets for obscure filetypes
+require "ftext"
+
+-- LSP configuration (lspconfig and Mason)
+require "lsp"

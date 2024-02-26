@@ -1,31 +1,4 @@
 {
-  "Readme": {
-    "prefix": "readme",
-    "body": [
-      "# ${1: Project Title}\n",
-      "Author(s): \n",
-      "Date: \n",
-      "## Motivation\n",
-      "## Project Execution\n",
-      "## Known Bugs\n",
-      "## Acknowledgements\n"
-    ],
-    "description": "README template"
-  },
-  "Readme w/ Pictures": {
-    "prefix": "readme",
-    "body": [
-      "# ${1: Project Title}\n",
-      "Author(s): \n",
-      "Date: \n",
-      "## Motivation\n",
-      "## Project Execution\n",
-      "## Known Bugs\n",
-      "## Pictures\n\n",
-      "## Acknowledgements\n"
-    ],
-    "description": "README template with Picture"
-  },
   "Metadata Front Matter": {
     "prefix": "meta",
     "body": [
@@ -33,7 +6,6 @@
       "path: $1",
       "title: $2",
       "date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
-      "excerpt: ",
       "author: ",
       "tags: []",
       "---\n"
