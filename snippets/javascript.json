@@ -1,0 +1,10 @@
+{
+  "for-loop": {
+    "prefix": "for",
+    "body": "for {$0}",
+    "description": "priority changed",
+    "luasnip": {
+      "priority": 2000
+    }
+  }
+}

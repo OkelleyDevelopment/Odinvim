@@ -28,7 +28,7 @@ sign({name = 'DiagnosticSignHint', text = ''})
 sign({name = 'DiagnosticSignInfo', text = ''})
 
 vim.diagnostic.config({
-    virtual_text = true,
+    virtual_text = false,
     signs = true,
     update_in_insert = true,
     underline = true,
@@ -60,3 +60,4 @@ require'lspconfig'.lua_ls.setup {
             }
     }
 }
+require'lspconfig'.pylsp.setup{}

@@ -19,7 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     { "nvim-lua/plenary.nvim", dev = false },
-    { 
+    {
         "rebelot/kanagawa.nvim",
         config = function()
             vim.cmd.colorscheme("kanagawa")
@@ -65,7 +65,7 @@ require("lazy").setup({
                     ["C"] = clipboard_actions.copy,
                     ["X"] = clipboard_actions.cut,
                     ["P"] = clipboard_actions.paste,
-                }, 
+                },
                 float = {
                     winblend = 0,
                     win_opts = function()
@@ -211,19 +211,39 @@ require("lazy").setup({
                     print "Failed to load cmp"
                     return
                 end
+
+                local function get_user()
+                    return os.getenv("USER") or "Author"
+                end
+
+                local function preprocess_snippets(snippets)
+                    local user = get_user()
+                    for _, snippet in pairs(snippets) do
+                        if type(snippet.body) == "string" then
+                          snippet.body = snippet.body:gsub("${USER}", user)
+                        elseif type(snippet.body) == "table" then
+                          for i, line in ipairs(snippet.body) do
+                            snippet.body[i] = line:gsub("${USER}", user)
+                          end
+                        end
+                    end
+                    return snippets
+                end
+
                 ---------------------------------------------------------------------
                 -- Found this trick from Chris@Machine on his discord
                 -- this selects the loader to read the json of our snippets
                 -- in this case, friendly-snippets
-                require("luasnip/loaders/from_vscode").lazy_load()
-                require("luasnip").filetype_extend("javascript", { "javascriptreact" })
-                require("luasnip").filetype_extend("javascriptreact", { "html" })
+                local vscode_loader = require("luasnip/loaders/from_vscode")
 
-                -- Extend javascript to load the react snippets too
-                require("luasnip").filetype_extend("typescript", { "javascript" })
+                -- Load snippets from friendly-snippets
+                vscode_loader.load()
 
-                -- Added this for my custom snippets (April 9, 2022)
-                require("luasnip/loaders/from_vscode").load { paths = "/home/nikolai/.config/nvim/snippets" }
+                for filetype, snippets in pairs(require("luasnip").snippets) do
+                  luasnip.snippets[filetype] = preprocess_snippets(snippets)
+                end
+
+
 
                 local check_backspace = function()
                     local col = vim.fn.col "." - 1
@@ -328,8 +348,8 @@ require("lazy").setup({
                 end,
             },
             sources = cmp.config.sources({
-                { name = "luasnip" },
                 { name = "nvim_lsp" },
+                { name = "luasnip" },
                 { name = "buffer" },
                 { name = "path" },
             }),

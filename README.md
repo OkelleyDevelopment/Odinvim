@@ -4,7 +4,7 @@ Author: Nicholas O'Kelley
 
 ## Motivation
 
-Maintain a slim configuration to aid development without introducing more 
+Maintain a slim configuration to aid development without introducing more
 friction to the workflow inside Neovim.
 
 ## Installation
@@ -12,9 +12,11 @@ friction to the workflow inside Neovim.
 ### Prerequisites
 
 - Neovim release v0.9
+
   - Note: I build from source and install with a DEB package.
 
 - If you wish to utilize the `live_grep` (`<leader>g`) portion of the [Telescope plugin](https://github.com/nvim-telescope/telescope.nvim)
+
   - `ripgrep (rg)`
 
 - `pip install pynvim`
@@ -37,7 +39,6 @@ Then follow the next sequence of steps:
 ```
 :checkhealth
 ```
-
 
 ## Note on Key Mappings
 

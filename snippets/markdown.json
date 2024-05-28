@@ -11,5 +11,9 @@
       "---\n"
     ],
     "description": "Markdown metadata front matter"
+  },
+  "author test": {
+    "prefix": "user",
+    "body": ["${USER}"]
   }
 }

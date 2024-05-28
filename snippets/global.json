@@ -3,5 +3,9 @@
     "prefix": "today",
     "body": ["${CURRENT_MONTH}-${CURRENT_DATE}-${CURRENT_YEAR}"],
     "description": "Date in (MM-DD-YYYY) format"
+  },
+  "author test": {
+    "prefix": "user",
+    "body": ["${USER}"]
   }
 }

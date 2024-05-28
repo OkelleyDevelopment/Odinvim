@@ -1,0 +1,12 @@
+{
+  "Emph": {
+    "prefix": ["emph", "*"],
+    "body": ["emph"],
+    "description": ""
+  },
+  "test": {
+    "prefix": "hello",
+    "body": "Hello $1",
+    "description": ""
+  }
+}

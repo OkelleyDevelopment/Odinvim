@@ -6,21 +6,13 @@
   "contributes": {
     "snippets": [
       {
+        "language": "javascript",
+        "path": "./javascript.json"
+      },
+      {
         "language": "markdown",
         "path": "./markdown.json"
-      },
-      {
-        "language": "markdown",
-        "path": "./note_templates.json"
-      },
-      {
-        "language": "all",
-        "path": "./global.json"
-      },
-      {
-        "language": "shell",
-        "path": "./shell.json"
-      }
+      } 
     ]
   }
 }
