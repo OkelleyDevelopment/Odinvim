@@ -212,45 +212,18 @@ require("lazy").setup({
                     return
                 end
 
-                local function get_user()
-                    return os.getenv("USER") or "Author"
-                end
-
-                local function preprocess_snippets(snippets)
-                    local user = get_user()
-                    for _, snippet in pairs(snippets) do
-                        if type(snippet.body) == "string" then
-                          snippet.body = snippet.body:gsub("${USER}", user)
-                        elseif type(snippet.body) == "table" then
-                          for i, line in ipairs(snippet.body) do
-                            snippet.body[i] = line:gsub("${USER}", user)
-                          end
-                        end
-                    end
-                    return snippets
-                end
-
-                ---------------------------------------------------------------------
-                -- Found this trick from Chris@Machine on his discord
-                -- this selects the loader to read the json of our snippets
-                -- in this case, friendly-snippets
                 local vscode_loader = require("luasnip/loaders/from_vscode")
-
-                -- Load snippets from friendly-snippets
-                vscode_loader.load()
-
-                for filetype, snippets in pairs(require("luasnip").snippets) do
-                  luasnip.snippets[filetype] = preprocess_snippets(snippets)
-                end
-
-
+                vscode_loader.lazy_load({
+                    -- exclude = { "latex", "tex" }
+                })
+                vscode_loader.lazy_load({ paths = "/home/nikolai/.config/nvim/snippets/"})
 
                 local check_backspace = function()
                     local col = vim.fn.col "." - 1
                     return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
                 end
-                ---------------------------------------------------------------------
 
+                ---------------------------------------------------------------------
                 -- Feel free to add in icons
                 -- using nerd font or something, I do not like using them
                 -- though :)

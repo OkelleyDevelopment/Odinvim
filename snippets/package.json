@@ -12,7 +12,14 @@
       {
         "language": "markdown",
         "path": "./markdown.json"
-      } 
+      },
+      {
+        "language": [
+          "latex",
+          "tex"
+        ],
+        "path": "./latex.json"
+      }
     ]
   }
 }

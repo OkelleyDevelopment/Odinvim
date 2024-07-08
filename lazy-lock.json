@@ -1,82 +1,22 @@
 {
-  "LuaSnip": {
-    "branch": "master",
-    "commit": "57c9f5c31b3d712376c704673eac8e948c82e9c1"
-  },
-  "cmp-buffer": {
-    "branch": "main",
-    "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa"
-  },
-  "cmp-nvim-lsp": {
-    "branch": "main",
-    "commit": "5af77f54de1b16c34b23cba810150689a3a90312"
-  },
-  "cmp-nvim-lua": {
-    "branch": "main",
-    "commit": "f12408bdb54c39c23e67cab726264c10db33ada8"
-  },
-  "cmp-path": {
-    "branch": "main",
-    "commit": "91ff86cd9c29299a64f968ebb45846c485725f23"
-  },
-  "cmp_luasnip": {
-    "branch": "master",
-    "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843"
-  },
-  "friendly-snippets": {
-    "branch": "main",
-    "commit": "ea068f1becd91bcd4591fceb6420d4335e2e14d3"
-  },
-  "gitsigns.nvim": {
-    "branch": "main",
-    "commit": "d195f0c35ced5174d3ecce1c4c8ebb3b5bc23fa9"
-  },
-  "kanagawa.nvim": {
-    "branch": "master",
-    "commit": "c19b9023842697ec92caf72cd3599f7dd7be4456"
-  },
-  "lazy.nvim": {
-    "branch": "main",
-    "commit": "96584866b9c5e998cbae300594d0ccfd0c464627"
-  },
-  "lir.nvim": {
-    "branch": "master",
-    "commit": "969e95bd07ec315b5efc53af69c881278c2b74fa"
-  },
-  "mason.nvim": {
-    "branch": "main",
-    "commit": "c43eeb5614a09dc17c03a7fb49de2e05de203924"
-  },
-  "nvim-autopairs": {
-    "branch": "master",
-    "commit": "1efb4f2e754d282762a1413ea0528d9a45143cdd"
-  },
-  "nvim-cmp": {
-    "branch": "main",
-    "commit": "538e37ba87284942c1d76ed38dd497e54e65b891"
-  },
-  "nvim-lspconfig": {
-    "branch": "master",
-    "commit": "b8751ff9ac9fd6ce253e0653d898de02e54040d5"
-  },
-  "nvim-treesitter": {
-    "branch": "master",
-    "commit": "5a713474e38a3999b85c6cb3f5cac3248a16c7d0"
-  },
-  "plenary.nvim": {
-    "branch": "master",
-    "commit": "55d9fe89e33efd26f532ef20223e5f9430c8b0c0"
-  },
-  "rust-tools.nvim": {
-    "branch": "master",
-    "commit": "676187908a1ce35ffcd727c654ed68d851299d3e"
-  },
-  "telescope.nvim": {
-    "branch": "master",
-    "commit": "6213322ab56eb27356fdc09a5078e41e3ea7f3bc"
-  },
-  "todo-comments.nvim": {
-    "branch": "main",
-    "commit": "833d8dd8b07eeda37a09e99460f72a02616935cb"
-  }
+  "LuaSnip": { "branch": "master", "commit": "57c9f5c31b3d712376c704673eac8e948c82e9c1" },
+  "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
+  "cmp-nvim-lsp": { "branch": "main", "commit": "5af77f54de1b16c34b23cba810150689a3a90312" },
+  "cmp-nvim-lua": { "branch": "main", "commit": "f12408bdb54c39c23e67cab726264c10db33ada8" },
+  "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
+  "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
+  "friendly-snippets": { "branch": "main", "commit": "45a1b96e46efe5fce8af325d4bed45feb9d29d0f" },
+  "gitsigns.nvim": { "branch": "main", "commit": "d195f0c35ced5174d3ecce1c4c8ebb3b5bc23fa9" },
+  "kanagawa.nvim": { "branch": "master", "commit": "c19b9023842697ec92caf72cd3599f7dd7be4456" },
+  "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
+  "lir.nvim": { "branch": "master", "commit": "969e95bd07ec315b5efc53af69c881278c2b74fa" },
+  "mason.nvim": { "branch": "main", "commit": "c43eeb5614a09dc17c03a7fb49de2e05de203924" },
+  "nvim-autopairs": { "branch": "master", "commit": "1efb4f2e754d282762a1413ea0528d9a45143cdd" },
+  "nvim-cmp": { "branch": "main", "commit": "538e37ba87284942c1d76ed38dd497e54e65b891" },
+  "nvim-lspconfig": { "branch": "master", "commit": "b8751ff9ac9fd6ce253e0653d898de02e54040d5" },
+  "nvim-treesitter": { "branch": "master", "commit": "5a713474e38a3999b85c6cb3f5cac3248a16c7d0" },
+  "plenary.nvim": { "branch": "master", "commit": "55d9fe89e33efd26f532ef20223e5f9430c8b0c0" },
+  "rust-tools.nvim": { "branch": "master", "commit": "676187908a1ce35ffcd727c654ed68d851299d3e" },
+  "telescope.nvim": { "branch": "master", "commit": "6213322ab56eb27356fdc09a5078e41e3ea7f3bc" },
+  "todo-comments.nvim": { "branch": "main", "commit": "833d8dd8b07eeda37a09e99460f72a02616935cb" }
 }

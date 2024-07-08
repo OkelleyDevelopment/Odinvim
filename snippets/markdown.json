@@ -13,7 +13,7 @@
     "description": "Markdown metadata front matter"
   },
   "author test": {
-    "prefix": "user",
-    "body": ["${USER}"]
+    "prefix": "nested",
+    "body": ["\\$${1:dir}"]
   }
 }
